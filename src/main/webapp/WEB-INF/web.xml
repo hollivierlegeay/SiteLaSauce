@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" version="3.0">
+  <welcome-file-list>
+    <welcome-file>index</welcome-file>
+  </welcome-file-list>
+  <servlet>
+    <servlet-name>Accueil</servlet-name>
+    <servlet-class>hei.devweb.servlets.AccueilServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>ListeRecettes</servlet-name>
+    <servlet-class>hei.devweb.servlets.ListeRecettesServlet</servlet-class>
+  </servlet>
+    <servlet>
+    <servlet-name>Recette</servlet-name>
+    <servlet-class>hei.devweb.servlets.RecetteServlet</servlet-class>
+  </servlet>
+   <servlet>
+    <servlet-name>ListeEvenements</servlet-name>
+    <servlet-class>hei.devweb.servlets.ListeEvenementsServlet</servlet-class>
+  </servlet>
+    <servlet>
+    <servlet-name>Evenement</servlet-name>
+    <servlet-class>hei.devweb.servlets.EvenementServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Accueil</servlet-name>
+    <url-pattern>/index</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ListeRecettes</servlet-name>
+    <url-pattern>/listeRecettes</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>Recette</servlet-name>
+    <url-pattern>/recette</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ListeEvenements</servlet-name>
+    <url-pattern>/listeEvenements</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>Evenement</servlet-name>
+    <url-pattern>/evenement</url-pattern>
+  </servlet-mapping>
+</web-app>
