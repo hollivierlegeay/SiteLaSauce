@@ -31,6 +31,11 @@
   <servlet-name>ListeEquipes</servlet-name>
     <servlet-class>hei.devweb.servlets.ListeEquipesServlet</servlet-class>
   </servlet>
+   <servlet>
+    <servlet-name>Contact</servlet-name>
+    <servlet-class>hei.devweb.servlets.ContactServlet</servlet-class>
+  </servlet>
+  
 
   <servlet-mapping>
     <servlet-name>Accueil</servlet-name>
@@ -60,5 +65,10 @@
   <servlet-mapping>
     <servlet-name>Equipe</servlet-name>
     <url-pattern>/equipe</url-pattern>
+  </servlet-mapping>
+  
+    <servlet-mapping>
+    <servlet-name>Contact</servlet-name>
+    <url-pattern>/contact</url-pattern>
   </servlet-mapping>
 </web-app>
