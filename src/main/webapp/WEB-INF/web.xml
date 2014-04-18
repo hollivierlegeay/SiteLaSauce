@@ -11,11 +11,11 @@
     <servlet-name>ListeRecettes</servlet-name>
     <servlet-class>hei.devweb.servlets.ListeRecettesServlet</servlet-class>
   </servlet>
-    <servlet>
+  <servlet>
     <servlet-name>Recette</servlet-name>
     <servlet-class>hei.devweb.servlets.RecetteServlet</servlet-class>
   </servlet>
-   <servlet>
+  <servlet>
     <servlet-name>ListeEvenements</servlet-name>
     <servlet-class>hei.devweb.servlets.ListeEvenementsServlet</servlet-class>
   </servlet>
@@ -28,15 +28,33 @@
     <servlet-class>hei.devweb.servlets.EquipeServlet</servlet-class>
   </servlet>
   <servlet>
-  <servlet-name>ListeEquipes</servlet-name>
+    <servlet-name>ListeEquipes</servlet-name>
     <servlet-class>hei.devweb.servlets.ListeEquipesServlet</servlet-class>
   </servlet>
-   <servlet>
+  <servlet>
     <servlet-name>Contact</servlet-name>
     <servlet-class>hei.devweb.servlets.ContactServlet</servlet-class>
   </servlet>
-  
-
+   <servlet>
+    <servlet-name>Membre</servlet-name>
+    <servlet-class>hei.devweb.servlets.MembreServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>ListeMembres</servlet-name>
+    <servlet-class>hei.devweb.servlets.ListeMembresServlet</servlet-class>
+  </servlet>  
+  <servlet>
+    <servlet-name>Inscription</servlet-name>
+    <servlet-class>hei.devweb.servlets.InscriptionServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>Connexion</servlet-name>
+    <servlet-class>hei.devweb.servlets.ConnexionServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>Deconnexion</servlet-name>
+    <servlet-class>hei.devweb.servlets.DeconnexionServlet</servlet-class>
+  </servlet>
   <servlet-mapping>
     <servlet-name>Accueil</servlet-name>
     <url-pattern>/index</url-pattern>
@@ -57,8 +75,7 @@
     <servlet-name>Evenement</servlet-name>
     <url-pattern>/evenement</url-pattern>
   </servlet-mapping>
-  
-    <servlet-mapping>
+  <servlet-mapping>
     <servlet-name>ListeEquipes</servlet-name>
     <url-pattern>/listeEquipes</url-pattern>
   </servlet-mapping>
@@ -66,9 +83,53 @@
     <servlet-name>Equipe</servlet-name>
     <url-pattern>/equipe</url-pattern>
   </servlet-mapping>
-  
-    <servlet-mapping>
+  <servlet-mapping>
     <servlet-name>Contact</servlet-name>
     <url-pattern>/contact</url-pattern>
   </servlet-mapping>
+    <servlet-mapping>
+    <servlet-name>ListeMembres</servlet-name>
+    <url-pattern>/listeMembres</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>Membre</servlet-name>
+    <url-pattern>/membre</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>Inscription</servlet-name>
+    <url-pattern>/inscription</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>Connexion</servlet-name>
+    <url-pattern>/connexion</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>Deconnexion</servlet-name>
+    <url-pattern>/deconnexion</url-pattern>
+  </servlet-mapping>
+  <filter>
+    <filter-name>RestrictionFilter</filter-name>
+    <filter-class>hei.devweb.filters.RestrictionFilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>RestrictionFilter</filter-name>
+    <url-pattern>/restreint/*</url-pattern>
+  </filter-mapping>
+  <filter>
+    <filter-name>Set Character Encoding</filter-name>
+    <filter-class>
+			org.apache.catalina.filters.SetCharacterEncodingFilter</filter-class>
+    <init-param>
+      <param-name>encoding</param-name>
+      <param-value>UTF-8</param-value>
+    </init-param>
+    <init-param>
+      <param-name>ignore</param-name>
+      <param-value>false</param-value>
+    </init-param>
+  </filter>
+  <filter-mapping>
+    <filter-name>Set Character Encoding</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
 </web-app>

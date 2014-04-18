@@ -24,25 +24,34 @@
 		</p>
 	
  	<!-- Menu de navigation -->
-		<c:set var="pageSelectionnee" value="listeEvenements" scope="request"></c:set>
-		<jsp:include page="menu.jsp" />	
+		<c:set var="pageSelectionnee" value="listeMembres" scope="request"></c:set>
+		<jsp:include page="menu.jsp" />	 
 		
 		<div id="cadreBleuEvenements">
 			<div id="cadreBlancEvenements">
-				<c:forEach var="evenement" items="${evenements}">
-					<tr>
-						<td><div class="lienEvenement">
-								<p class="nomEvenement">${evenement.titreEvenement}</p>
-								<p class="descriptionEvenement">
-									${evenement.dateEvenement}<br>
-									${evenement.detailEvenement}<br>
-									${evenement.lieuEvenement}
-								</p>
-
-							</div></td>
-					</tr>
-				</c:forEach>
-
+					<div>
+					<table >
+						<thead>
+							<tr>
+								<th></th>
+							</tr>
+						</thead>
+						<tbody>
+							<c:forEach var="membre" items="${membres}">
+								<tr>
+									<td><p class=font>${membre.nom}</p></td>
+									<td><p class=font>${membre.prenom}</p></td>
+									<td><p>
+											<a href="membre?idMembre=${membre.idMembre}"
+												title="Détails ${membre.prenom} "> <span></span>Détails
+												du Membre
+											</a>
+										</p></td>
+								</tr>
+							</c:forEach>
+						</tbody>
+					</table>
+				</div>
 
 			</div>
 		</div>
