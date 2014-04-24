@@ -1,8 +1,11 @@
 package hei.devweb.servlets;
-import hei.devweb.beans.Utilisateur;
-import hei.devweb.forms.ConnexionForm;
+
+import hei.devweb.metier.MembreManager;
+import hei.devweb.model.Equipe;
+import hei.devweb.model.Membre;
 
 import java.io.IOException;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -11,10 +14,8 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 public class ConnexionServlet extends HttpServlet {
-	public static final String ATT_USER = "utilisateur";
-	public static final String ATT_FORM = "form";
-	public static final String ATT_SESSION_USER = "sessionUtilisateur";
 	public static final String VUE = "/WEB-INF/pages/connexion.jsp";
+
 
 	public void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
@@ -25,27 +26,34 @@ public class ConnexionServlet extends HttpServlet {
 
 	public void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		/* Préparation de l'objet formulaire */
-		ConnexionForm form = new ConnexionForm();
-		/* Traitement de la requête et récupération du bean en résultant */
-		Utilisateur utilisateur = form.connecterUtilisateur(request);
-		/* Récupération de la session depuis la requête */
+
+		String login = request.getParameter("email");
+		String mdp = request.getParameter("motdepasse");
 		HttpSession session = request.getSession();
-		/**
-		 * Si aucune erreur de validation n'a eu lieu, alors ajout du bean
-		 * Utilisateur à la session, sinon suppression du bean de la session.
-		 */
-		if (form.getErreurs().isEmpty()) {
-			session.setAttribute(ATT_SESSION_USER, utilisateur);
-		} else {
-			session.setAttribute(ATT_SESSION_USER, null);
+
+		List<Membre> membres = MembreManager.getInstance().listerMembres();
+		for (int i = 0; i < membres.size(); i++) {
+			if (login.equals(membres.get(i).getMailHEI())
+					&& mdp.equals(membres.get(i).getMotdePasse())
+					&& login.endsWith("@hei.fr")) {
+
+				session.setAttribute("mailHEI", membres.get(i).getMailHEI()); // Succès
+																				// de
+																				// la
+																				// connexion
+																				// à
+																				// l'espace
+																				// Membre
+
+				/* Redirection vers le menu de l'espace Membre */
+				response.sendRedirect("indexM");
+			} else {
+//				request.getRequestDispatcher("connexion");
+				session.setAttribute("mailHEI", null); // Echec de connexion à
+														// l'espace Membre
+				
+			}
+
 		}
-		/*
-		 * Stockage du formulaire et du bean dans l'objet request
-		 */
-		request.setAttribute(ATT_FORM, form);
-		request.setAttribute(ATT_USER, utilisateur);
-		this.getServletContext().getRequestDispatcher(VUE)
-				.forward(request, response);
 	}
 }

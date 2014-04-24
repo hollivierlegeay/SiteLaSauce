@@ -114,4 +114,4 @@ public final class InscriptionForm {
 			return valeur.trim();
 		}
 	}
-}
+ }

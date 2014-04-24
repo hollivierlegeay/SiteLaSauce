@@ -269,6 +269,10 @@ body {
 }
 
 /* ****************Formulaires ******************** */
+body,p,legend,label,input {
+	font: normal 8pt verdana, helvetica, sans-serif;
+}
+
 fieldset {
 	padding: 10px;
 	border: 1px #0568CD solid;

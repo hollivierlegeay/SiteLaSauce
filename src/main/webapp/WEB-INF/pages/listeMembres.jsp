@@ -25,7 +25,7 @@
 	
  	<!-- Menu de navigation -->
 		<c:set var="pageSelectionnee" value="listeMembres" scope="request"></c:set>
-		<jsp:include page="menu.jsp" />	 
+		<jsp:include page="menuM.jsp" />	 
 		
 		<div id="cadreBleuEvenements">
 			<div id="cadreBlancEvenements">

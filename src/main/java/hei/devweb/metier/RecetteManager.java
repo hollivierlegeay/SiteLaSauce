@@ -25,7 +25,7 @@ public class RecetteManager {
 	public Recette getRecette(Integer id) {
 		if (id == null) {
 			throw new IllegalArgumentException(
-					"L'identifiant du recette doit etre renseigné.");
+					"L'identifiant de la recette doit etre renseignÃ©.");
 		}
 		return recetteDao.getRecette(id);
 	}
@@ -33,7 +33,7 @@ public class RecetteManager {
 	public void ajouterRecette(Recette recette) {
 		if (recette == null) {
 			throw new IllegalArgumentException(
-					"Le recette doit être renseigné.");
+					"La recette doit Ãªtre renseignÃ©e.");
 		}
 		if (recette.getIdRecette() == null
 				|| recette.getTitrePlat() == null
@@ -42,7 +42,7 @@ public class RecetteManager {
 				|| recette.getIngredients() == null
 				|| recette.getTexteRecette() == null) {
 			throw new IllegalArgumentException(
-					"Un champ obligatoire du recette n'est pas renseigné.");
+					"Un champ obligatoire du recette n'est pas renseignï¿½.");
 		}
 
 		recetteDao.ajouterRecette(recette);

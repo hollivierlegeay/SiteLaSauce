@@ -8,12 +8,24 @@
     <servlet-class>hei.devweb.servlets.AccueilServlet</servlet-class>
   </servlet>
   <servlet>
+    <servlet-name>AccueilM</servlet-name>
+    <servlet-class>hei.devweb.servlets.AccueilMServlet</servlet-class>
+  </servlet>
+  <servlet>
     <servlet-name>ListeRecettes</servlet-name>
     <servlet-class>hei.devweb.servlets.ListeRecettesServlet</servlet-class>
   </servlet>
   <servlet>
     <servlet-name>Recette</servlet-name>
     <servlet-class>hei.devweb.servlets.RecetteServlet</servlet-class>
+  </servlet>
+      <servlet>
+    <servlet-name>AjoutRecette</servlet-name>
+    <servlet-class>hei.devweb.servlets.AjoutRecetteServlet</servlet-class>
+  </servlet>
+    <servlet>
+    <servlet-name>CreationRecette</servlet-name>
+    <servlet-class>hei.devweb.servlets.CreationRecetteServlet</servlet-class>
   </servlet>
   <servlet>
     <servlet-name>ListeEvenements</servlet-name>
@@ -35,14 +47,14 @@
     <servlet-name>Contact</servlet-name>
     <servlet-class>hei.devweb.servlets.ContactServlet</servlet-class>
   </servlet>
-   <servlet>
+  <servlet>
     <servlet-name>Membre</servlet-name>
     <servlet-class>hei.devweb.servlets.MembreServlet</servlet-class>
   </servlet>
   <servlet>
     <servlet-name>ListeMembres</servlet-name>
     <servlet-class>hei.devweb.servlets.ListeMembresServlet</servlet-class>
-  </servlet>  
+  </servlet>
   <servlet>
     <servlet-name>Inscription</servlet-name>
     <servlet-class>hei.devweb.servlets.InscriptionServlet</servlet-class>
@@ -60,12 +72,24 @@
     <url-pattern>/index</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
+    <servlet-name>AccueilM</servlet-name>
+    <url-pattern>/indexM</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
     <servlet-name>ListeRecettes</servlet-name>
     <url-pattern>/listeRecettes</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
     <servlet-name>Recette</servlet-name>
     <url-pattern>/recette</url-pattern>
+  </servlet-mapping>
+    <servlet-mapping>
+    <servlet-name>AjoutRecette</servlet-name>
+    <url-pattern>/ajouterRecette</url-pattern>
+  </servlet-mapping>
+    <servlet-mapping>
+    <servlet-name>CreationRecette</servlet-name>
+    <url-pattern>/creationRecette</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
     <servlet-name>ListeEvenements</servlet-name>
@@ -87,7 +111,7 @@
     <servlet-name>Contact</servlet-name>
     <url-pattern>/contact</url-pattern>
   </servlet-mapping>
-    <servlet-mapping>
+  <servlet-mapping>
     <servlet-name>ListeMembres</servlet-name>
     <url-pattern>/listeMembres</url-pattern>
   </servlet-mapping>

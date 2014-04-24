@@ -18,8 +18,8 @@
 			<li class="${pageSelectionnee == 'contact' ? 'active' : ''}"><a
 				href="contact"> Contact </a></li>
 			<li><a>~</a></li>
-			<li class="${pageSelectionnee == 'listeMembres' ? 'active' : ''}"><a
-				href="listeMembres">Membres</a></li>
+			<li class="${pageSelectionnee == 'connexion' ? 'active' : ''}"><a
+				href="connexion">Membres</a></li>
 		</ul>
 	</nav>
 </header>
