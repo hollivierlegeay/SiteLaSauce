@@ -17,9 +17,14 @@
 			<li><a>~</a></li>
 			<li class="${pageSelectionnee == 'contact' ? 'active' : ''}"><a
 				href="contact"> Contact </a></li>
-			<li><a>~</a></li>
-			<li class="${pageSelectionnee == 'connexion' ? 'active' : ''}"><a
+		<li><a>~</a></li>
+			<%-- 	<%if(request.getSession().getAttribute("mailHEI").equals("")||request.getSession().getAttribute("mailHEI").equals(null)){ %>
+			--%><li class="${pageSelectionnee == 'connexion' ? 'active' : ''}"><a
 				href="connexion">Membres</a></li>
+			<%-- %}else{ %>
+			<li class="${pageSelectionnee == 'connexion' ? 'active' : ''}"><a
+				href="indexM">Membres</a></li>
+				<%} %>  --%>
 		</ul>
 	</nav>
 </header>

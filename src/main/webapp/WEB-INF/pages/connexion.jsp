@@ -16,11 +16,9 @@
 <!--Contient la majeure partie du code, ce qui est écrit est affiché à l'écran-->
 <body>
 	<div id="fondblanc">
-
 		<p>
 			<img class="baniere" src="Images/baniere.jpg" alt="Banière du site" />
 		</p>
-
 		<!-- Menu de navigation -->
 		<c:set var="pageSelectionnee" value="connexion" scope="request"></c:set>
 		<jsp:include page="menu.jsp" />
@@ -30,31 +28,30 @@
 			<legend>Connexion à l'espace Membre</legend>
 			<p>Vous pouvez vous connecter via ce formulaire. [Réservé aux membres de l'équipe LaSauce]</p>
 
-			<label for="email">Adresse email <span class="requis">*</span></label>
+			<label for="email">Adresse email HEI <span class="requis">*</span></label>
 
 			<input type="email" id="email" name="email"
 				value="<c:out value="${utilisateur.email}"/>" size="20"
 				maxlength="60" /> <span class="erreur">${form.erreurs['email']}</span>
 			<br /> 
-			<label for="motdepasse">Mot de passe <span
-				class="requis">*</span></label> <input type="password" id="motdepasse"
-				name="motdepasse" value="" size="20" maxlength="20" /> <span
-				class="erreur">${form.erreurs['motdepasse']}</span> <br /> <input
-				type="submit" value="Connexion" class="sansLabel" /> <br />
+			<label for="motdepasse">Mot de passe <span class="requis">*</span></label> 
+			<input type="password" id="motdepasse" name="motdepasse" value="" size="20" maxlength="20" /> 
+			<span class="erreur">${form.erreurs['motdepasse']}</span> <br /> <input
+				type="submit" value="Connexion" class="sansLabel" />
 
-			<p class="${empty form.erreurs ? 'succes' : 'erreur'}">${form.resultat}</p>
-			<%-- Vérification de la présence d'un objet
-utilisateur en session --%>
+ 			<p class="${empty form.erreurs ? 'succes' : 'erreur'}">${form.resultat}</p>
+			
+			<%--Vérification de la présence d'un objet
+utilisateur en session--%>
 
 			<c:if test="${!empty sessionScope.sessionUtilisateur}">
-				<%-- Si l'utilisateur existe en session, alors on affiche son adresse email. --%>
+				<%--Si l'utilisateur existe en session, alors on affiche son adresse email.--%>
 
-				<p class="succes">Vous êtes connecté(e) avec l'adresse :
+				<p class="succes">Succès de la connexion. <br /> Vous êtes connecté(e) avec l'adresse :
 					${sessionScope.sessionUtilisateur.email}
-					
-					
-					
-					</p>
+					<br /> 
+					<a href="indexM">Accéder à l'espace Membres</a>
+					</p> 
 			</c:if>
 
 		</fieldset>

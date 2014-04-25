@@ -1,5 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" version="3.0">
+    <filter>
+    <filter-name>RestrictionFilter</filter-name>
+    <filter-class>hei.devweb.filters.RestrictionFilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>RestrictionFilter</filter-name>
+    <url-pattern>/ajouterRecette</url-pattern>
+  </filter-mapping>
+    <filter-mapping>
+    <filter-name>RestrictionFilter</filter-name>
+    <url-pattern>/indexM</url-pattern>
+  </filter-mapping>
+  
   <welcome-file-list>
     <welcome-file>index</welcome-file>
   </welcome-file-list>
@@ -131,14 +144,8 @@
     <servlet-name>Deconnexion</servlet-name>
     <url-pattern>/deconnexion</url-pattern>
   </servlet-mapping>
-  <filter>
-    <filter-name>RestrictionFilter</filter-name>
-    <filter-class>hei.devweb.filters.RestrictionFilter</filter-class>
-  </filter>
-  <filter-mapping>
-    <filter-name>RestrictionFilter</filter-name>
-    <url-pattern>/restreint/*</url-pattern>
-  </filter-mapping>
+ 
+
   <filter>
     <filter-name>Set Character Encoding</filter-name>
     <filter-class>
