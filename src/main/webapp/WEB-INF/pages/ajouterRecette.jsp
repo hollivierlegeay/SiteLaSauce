@@ -40,18 +40,14 @@
 					</label> <input type="text" id="typePlatRecette" name="typePlatRecette"
 						value="" size="20" maxlength="20" /> <br /> <label
 						for="ingredientsRecette">Ingredients <span class="requis">*</span></label>
-
 					<textarea name="ingredientsRecette" id="ingredientsRecette"
 						rows="5" cols="50">
 				</textarea>
-					<!-- 				<input type="text" id="ingredientsRecette"
-				name="ingredientsRecette" value="" size="20" maxlength="20" />  -->
 					<br /> <label for="texteRecette"> Preparation <span
 						class="requis">*</span></label>
 					<textarea name="texteRecette" id="texteRecette" rows="10" cols="50">
 				</textarea>
-					<!-- <input type="text" id="texteRecette" name="texteRecette" value=""
-				size="20" maxlength="20" /> -->
+
 					<br />
 
 				</fieldset>

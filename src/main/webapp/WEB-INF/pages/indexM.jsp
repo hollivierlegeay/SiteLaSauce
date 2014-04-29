@@ -18,15 +18,15 @@
 <!--Contient la majeure partie du code, ce qui est écrit est affiché à l'écran-->
 <body>	
 		<div id="fondblanc">
-		
+			
 			<p>
 				<img class="baniere" src="Images/baniere.jpg" alt="Banière du site" />
 			</p>
-	
+	<fieldset>
 	<!-- Menu de navigation -->
 		<c:set var="pageSelectionnee" value="indexM" scope="request"></c:set>
 		<jsp:include page="menuM.jsp" />
-
+	</fieldset>
 </body>
 			
 		</div>

@@ -33,6 +33,11 @@
 						<td><div class="lienRecette"> 
 							<p>${recette.titrePlat}</p>
 							 </div></td>
+						<td><p>
+							<a href="recette?idRecette=${recette.idRecette}"
+												title="Détails ${recette.titrePlat}"> <span>Détails
+													de la Recette</span></a>
+						</p></td>	 
 						</tr>
 					</c:forEach>
 				</tbody>

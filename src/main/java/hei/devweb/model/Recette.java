@@ -4,16 +4,17 @@ public class Recette {
 
 	private Integer idRecette;
 	private String titrePlat;
+	private String imgRecette;
 	private String difficulte;
 	private String typePlat;
 	private String ingredients;
 	private String texteRecette;
 
-	public Recette(Integer idRecette, String titrePlat, String difficulte, String typePlat, String ingredients,
-			String texteRecette) {
+	public Recette(Integer idRecette, String titrePlat, String imgRecette, String difficulte, String typePlat, String ingredients, String texteRecette) {
 		super();
 		this.idRecette = idRecette;
 		this.titrePlat = titrePlat;
+		this.imgRecette = imgRecette;
 		this.difficulte = difficulte;
 		this.typePlat = typePlat;
 		this.ingredients = ingredients;
@@ -21,6 +22,15 @@ public class Recette {
 
 	}
 
+	public String getImgRecette() {
+		return imgRecette;
+	}
+
+	public void setImgRecette(String imgRecette) {
+		this.imgRecette = imgRecette;
+	}
+
+	
 	public String getTitrePlat() {
 		return titrePlat;
 	}

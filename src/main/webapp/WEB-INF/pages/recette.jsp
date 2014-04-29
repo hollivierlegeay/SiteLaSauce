@@ -32,14 +32,40 @@
 					<h3>Detail de la Recette</h3>
 					<div>
 						<br />
-						<h2>Nom de la Recette</h2>
-						<div>
+						<h2>
 							<p>${recette.titrePlat}</p>
+						</h2>
+					</div>
+					<img src="${recette.imgRecette}" alt="Photo Recette" />
+					
+					<div>
+						<br />
+						<p>
+						<h3>Difficulté :</h3>
+
+						${recette.difficulte}
+						</p>
+
+					</div>
+					<div>
+						<br />
+						<p>
+						<h3>Type de plat :</h3>
+
+						${recette.typePlat}
+						</p>
+
+					</div>
+					<div>
+						<br />
+						<h3>Ingrédients :</h3>
+						<div>
+							<p>${recette.ingredients}</p>
 						</div>
 					</div>
 					<div>
 						<br />
-						<h2>Contenu</h2>
+						<h2>Préparation :</h2>
 						<div>
 							<p>${recette.texteRecette}</p>
 						</div>

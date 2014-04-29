@@ -24,6 +24,7 @@ public class RecetteDao {
 			while (results.next()) {
 				Recette recette = new Recette(results.getInt("idRecette"),
 						results.getString("titrePlat"),
+						results.getString("imgRecette"),
 						results.getString("difficulte"),
 						results.getString("typePlat"),
 						results.getString("ingredients"),
@@ -50,12 +51,13 @@ public class RecetteDao {
 
 			// Utiliser la connexion
 			PreparedStatement stmt = connection
-					.prepareStatement("INSERT INTO Recette (titrePlat,difficulte, typePlat,ingredients, texteRecette) VALUES(?,?,?,?,?)");
+					.prepareStatement("INSERT INTO Recette (titrePlat,imgRecette, difficulte, typePlat,ingredients, texteRecette) VALUES(?,?,?,?,?,?)");
 			stmt.setString(1, Recette.getTitrePlat());
-			stmt.setString(2, Recette.getDifficulte());
-			stmt.setString(3, Recette.getTypePlat());
-			stmt.setString(4, Recette.getIngredients());
-			stmt.setString(5, Recette.getTexteRecette());
+			stmt.setString(2, Recette.getImgRecette());
+			stmt.setString(3, Recette.getDifficulte());
+			stmt.setString(4, Recette.getTypePlat());
+			stmt.setString(5, Recette.getIngredients());
+			stmt.setString(6, Recette.getTexteRecette());
 			stmt.executeUpdate();
 
 			// Fermer la connexion
@@ -101,6 +103,7 @@ public class RecetteDao {
 			if (result.next()) {
 				Recette = new Recette(result.getInt("idRecette"),
 						result.getString("titrePlat"),
+						result.getString("imgRecette"),
 						result.getString("difficulte"),
 						result.getString("typePlat"),
 						result.getString("ingredients"),

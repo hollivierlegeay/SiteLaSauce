@@ -24,7 +24,8 @@ public class EquipeDao {
 			while (results.next()) {
 				Equipe Equipe = new Equipe(results.getInt("idEquipe"),
 						results.getString("anneeMandat"),
-						results.getString("descriptionEquipe"));
+						results.getString("descriptionEquipe"),
+						results.getString("imgEquipe"));
 				listeEquipes.add(Equipe);
 			}
 
@@ -47,9 +48,10 @@ public class EquipeDao {
 
 			// Utiliser la connexion
 			PreparedStatement stmt = connection
-					.prepareStatement("INSERT INTO `Equipe`(`anneeMandat`,`descriptionEquipe`) VALUES(?,?)");
+					.prepareStatement("INSERT INTO `Equipe`(`anneeMandat`,`descriptionEquipe`,`imgEquipe`) VALUES(?,?,?)");
 			stmt.setString(1, Equipe.getAnneeMandat());
 			stmt.setString(2, Equipe.getDescriptionEquipe());
+			stmt.setString(3,Equipe.getImgEquipe());
 			stmt.executeUpdate();
 
 			// Fermer la connexion
@@ -75,7 +77,8 @@ public class EquipeDao {
 			if (result.next()) {
 				Equipe = new Equipe(result.getInt("idEquipe"),
 						result.getString("anneeMandat"),
-						result.getString("descriptionEquipe"));
+						result.getString("descriptionEquipe"),
+						result.getString("imgEquipe"));
 			}
 
 			// Fermer la connexion

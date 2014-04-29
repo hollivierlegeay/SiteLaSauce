@@ -32,13 +32,9 @@
     <servlet-name>Recette</servlet-name>
     <servlet-class>hei.devweb.servlets.RecetteServlet</servlet-class>
   </servlet>
-      <servlet>
+  <servlet>
     <servlet-name>AjoutRecette</servlet-name>
     <servlet-class>hei.devweb.servlets.AjoutRecetteServlet</servlet-class>
-  </servlet>
-    <servlet>
-    <servlet-name>CreationRecette</servlet-name>
-    <servlet-class>hei.devweb.servlets.CreationRecetteServlet</servlet-class>
   </servlet>
   <servlet>
     <servlet-name>ListeEvenements</servlet-name>
@@ -48,6 +44,10 @@
     <servlet-name>Evenement</servlet-name>
     <servlet-class>hei.devweb.servlets.EvenementServlet</servlet-class>
   </servlet>
+    <servlet>
+    <servlet-name>AjoutEvenement</servlet-name>
+    <servlet-class>hei.devweb.servlets.AjoutEvenementServlet</servlet-class>
+  </servlet>
   <servlet>
     <servlet-name>Equipe</servlet-name>
     <servlet-class>hei.devweb.servlets.EquipeServlet</servlet-class>
@@ -55,6 +55,10 @@
   <servlet>
     <servlet-name>ListeEquipes</servlet-name>
     <servlet-class>hei.devweb.servlets.ListeEquipesServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>AjoutEquipe</servlet-name>
+    <servlet-class>hei.devweb.servlets.AjoutEquipeServlet</servlet-class>
   </servlet>
   <servlet>
     <servlet-name>Contact</servlet-name>
@@ -100,10 +104,6 @@
     <servlet-name>AjoutRecette</servlet-name>
     <url-pattern>/ajouterRecette</url-pattern>
   </servlet-mapping>
-    <servlet-mapping>
-    <servlet-name>CreationRecette</servlet-name>
-    <url-pattern>/creationRecette</url-pattern>
-  </servlet-mapping>
   <servlet-mapping>
     <servlet-name>ListeEvenements</servlet-name>
     <url-pattern>/listeEvenements</url-pattern>
@@ -116,9 +116,17 @@
     <servlet-name>ListeEquipes</servlet-name>
     <url-pattern>/listeEquipes</url-pattern>
   </servlet-mapping>
+    <servlet-mapping>
+    <servlet-name>AjoutEvenement</servlet-name>
+    <url-pattern>/ajouterEvenement</url-pattern>
+  </servlet-mapping>
   <servlet-mapping>
     <servlet-name>Equipe</servlet-name>
     <url-pattern>/equipe</url-pattern>
+  </servlet-mapping>
+      <servlet-mapping>
+    <servlet-name>AjoutEquipe</servlet-name>
+    <url-pattern>/ajouterEquipe</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
     <servlet-name>Contact</servlet-name>

@@ -5,13 +5,22 @@ public class Equipe {
 	private Integer idEquipe;
 	private String anneeMandat;
 	private String descriptionEquipe;
+	private String imgEquipe;
 
-	public Equipe(Integer idEquipe, String anneeMandat, String descriptionEquipe) {
+	public Equipe(Integer idEquipe, String anneeMandat, String descriptionEquipe, String imgEquipe) {
 		super();
 		this.idEquipe = idEquipe;
 		this.anneeMandat = anneeMandat;
 		this.descriptionEquipe = descriptionEquipe;
+		this.imgEquipe =imgEquipe;
+	}
 
+	public String getImgEquipe() {
+		return imgEquipe;
+	}
+
+	public void setImgEquipe(String imgEquipe) {
+		this.imgEquipe = imgEquipe;
 	}
 
 	public String getDescriptionEquipe() {
