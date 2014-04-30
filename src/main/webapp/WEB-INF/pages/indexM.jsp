@@ -23,6 +23,7 @@
 				<img class="baniere" src="Images/baniere.jpg" alt="Banière du site" />
 			</p>
 	<fieldset>
+	<legend>Espace Membre</legend>
 	<!-- Menu de navigation -->
 		<c:set var="pageSelectionnee" value="indexM" scope="request"></c:set>
 		<jsp:include page="menuM.jsp" />

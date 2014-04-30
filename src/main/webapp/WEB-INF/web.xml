@@ -72,9 +72,9 @@
     <servlet-name>ListeMembres</servlet-name>
     <servlet-class>hei.devweb.servlets.ListeMembresServlet</servlet-class>
   </servlet>
-  <servlet>
-    <servlet-name>Inscription</servlet-name>
-    <servlet-class>hei.devweb.servlets.InscriptionServlet</servlet-class>
+ <servlet>
+    <servlet-name>AjoutMembre</servlet-name>
+    <servlet-class>hei.devweb.servlets.AjoutMembreServlet</servlet-class>
   </servlet>
   <servlet>
     <servlet-name>Connexion</servlet-name>
@@ -140,9 +140,9 @@
     <servlet-name>Membre</servlet-name>
     <url-pattern>/membre</url-pattern>
   </servlet-mapping>
-  <servlet-mapping>
-    <servlet-name>Inscription</servlet-name>
-    <url-pattern>/inscription</url-pattern>
+    <servlet-mapping>
+    <servlet-name>AjoutMembre</servlet-name>
+    <url-pattern>/ajouterMembre</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
     <servlet-name>Connexion</servlet-name>

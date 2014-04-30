@@ -22,11 +22,12 @@
 	<p>
 			<img class="baniere" src="Images/baniere.jpg" alt="Banière du site" />
 		</p>
-	
+	<fieldset>
  	<!-- Menu de navigation -->
 		<c:set var="pageSelectionnee" value="listeMembres" scope="request"></c:set>
 		<jsp:include page="menuM.jsp" />	 
-		
+	</fieldset>
+	<legend>Espace Membre</legend>	
 		<div id="cadreBleuEvenements">
 			<div id="cadreBlancEvenements">
 					<div>
