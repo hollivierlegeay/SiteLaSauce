@@ -66,7 +66,26 @@ public class MembreDao {
 			e.printStackTrace();
 		}
 	}
+	public void supprimerMembre(Integer idMembre) {
+		try {
+			Connection connection = DataSourceProvider.getDataSource()
+					.getConnection();
 
+			// Utiliser la connexion
+			PreparedStatement stmt = connection
+					.prepareStatement("DELETE FROM Membre WHERE idMembre = ?");
+
+			stmt.setInt(1, idMembre);
+			stmt.executeUpdate();
+			// Fermer la connexion
+			stmt.close();
+			connection.close();
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
+	
 	public Membre getMembre(Integer idMembre) {
 		Membre Membre = null;
 		try {

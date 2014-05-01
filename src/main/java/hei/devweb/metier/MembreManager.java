@@ -43,5 +43,8 @@ public class MembreManager {
 
 		membreDao.ajouterMembre(membre);
 	}
+	public void supprimerMembre(Integer idMembre) {
+		membreDao.supprimerMembre(idMembre);
+	}
 
 }

@@ -22,8 +22,8 @@
 		</p>
 
 		<!-- Menu de navigation -->
-		<c:set var="pageSelectionnee" value="listeRecettes" scope="request"></c:set>
-		<jsp:include page="menuM.jsp" />
+		<c:set var="pageSelectionnee" value="listeRecettesPublic" scope="request"></c:set>
+		<jsp:include page="menu.jsp" />
 
 		<div>
 			<table>
@@ -38,12 +38,7 @@
 												title="Détails ${recette.titrePlat}"> <span>Détails
 													de la Recette</span></a>
 						</p></td>
-						<td><p>
-											<a href="supprimerRecette?idRecette=${recette.idRecette}"
-												title="Supprimer la Recette : ${recette.idRecette}">
-												<span> Supprimer</span>
-											</a>
-										</p></td>	 
+ 
 						</tr>
 					</c:forEach>
 				</tbody>

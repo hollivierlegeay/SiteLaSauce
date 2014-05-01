@@ -18,15 +18,15 @@
 <body>
 
 	<div id="fondblanc">
-			
-	<p>
+
+		<p>
 			<img class="baniere" src="Images/baniere.jpg" alt="Banière du site" />
 		</p>
-	
- 	<!-- Menu de navigation -->
+
+		<!-- Menu de navigation -->
 		<c:set var="pageSelectionnee" value="listeEvenements" scope="request"></c:set>
-		<jsp:include page="menu.jsp" />	
-		
+		<jsp:include page="menu.jsp" />
+
 		<div id="cadreBleuEvenements">
 			<div id="cadreBlancEvenements">
 				<c:forEach var="evenement" items="${evenements}">
@@ -38,8 +38,12 @@
 									${evenement.detailEvenement}<br>
 									${evenement.lieuEvenement}
 								</p>
-
 							</div></td>
+						<td><p>
+								<a href="supprimerEvenement?idEvenement=${evenement.idEvenement}"
+									title="Supprimer l'evenement : ${evenement.idEvenement}"> 
+									<span>Supprimer</span></a>
+							</p></td>
 					</tr>
 				</c:forEach>
 

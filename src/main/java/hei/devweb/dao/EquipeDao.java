@@ -62,6 +62,25 @@ public class EquipeDao {
 			e.printStackTrace();
 		}
 	}
+	public void supprimerEquipe(Integer idEquipe) {
+		try {
+			Connection connection = DataSourceProvider.getDataSource()
+					.getConnection();
+
+			// Utiliser la connexion
+			PreparedStatement stmt = connection
+					.prepareStatement("DELETE FROM Equipe WHERE idEquipe = ?");
+
+			stmt.setInt(1, idEquipe);
+			stmt.executeUpdate();
+			// Fermer la connexion
+			stmt.close();
+			connection.close();
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
 
 	public Equipe getEquipe(Integer idEquipe) {
 		Equipe Equipe = null;

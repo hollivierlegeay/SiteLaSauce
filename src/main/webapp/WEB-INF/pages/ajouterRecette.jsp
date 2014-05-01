@@ -1,5 +1,5 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>   
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -39,15 +39,18 @@
 						de plat <span class="requis">*</span>
 					</label> <input type="text" id="typePlatRecette" name="typePlatRecette"
 						value="" size="20" maxlength="20" /> <br /> <label
-						for="ingredientsRecette">Ingredients <span class="requis">*</span></label>
+						for="imgRecette">Photo<span class="requis">*</span></label> <input
+						type="text" id="imgRecette" name="imgRecette" value="" size="65"
+						maxlength="500" /> <br /> <label for="ingredientsRecette">Ingredients
+						<span class="requis">*</span>
+					</label>
 					<textarea name="ingredientsRecette" id="ingredientsRecette"
 						rows="5" cols="50">
-				</textarea>
+					</textarea>
 					<br /> <label for="texteRecette"> Preparation <span
 						class="requis">*</span></label>
 					<textarea name="texteRecette" id="texteRecette" rows="10" cols="50">
-				</textarea>
-
+					</textarea>
 					<br />
 
 				</fieldset>

@@ -50,7 +50,7 @@ public class ConnexionServlet extends HttpServlet {
 		* Utilisateur à la session, sinon suppression du bean de la
 		session.
 		*/
-		System.out.println("Coucou");
+		System.out.println("Avant les 2 if : OK");
 		List<Membre> membres = MembreManager.getInstance().listerMembres();
 		for (int i = 0; i < membres.size(); i++) 
 		{
@@ -61,7 +61,7 @@ public class ConnexionServlet extends HttpServlet {
 			{	System.out.println("1er IF = OK");
 				
 					session.setAttribute(ATT_SESSION_USER, utilisateur );
-					System.out.println("2eme IF = OK");
+					System.out.println("2eme IF = OK donc Connexion avec succès");
 				
 			} 
 			else {

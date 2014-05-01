@@ -22,12 +22,14 @@
 	<p>
 			<img class="baniere" src="Images/baniere.jpg" alt="Banière du site" />
 		</p>
+	
 	<fieldset>
+ 	<legend>Espace Membre</legend>	
  	<!-- Menu de navigation -->
 		<c:set var="pageSelectionnee" value="listeMembres" scope="request"></c:set>
 		<jsp:include page="menuM.jsp" />	 
 	</fieldset>
-	<legend>Espace Membre</legend>	
+	
 		<div id="cadreBleuEvenements">
 			<div id="cadreBlancEvenements">
 					<div>
@@ -42,12 +44,20 @@
 								<tr>
 									<td><p class=font>${membre.nom}</p></td>
 									<td><p class=font>${membre.prenom}</p></td>
+									<td><p class=font>${membre.telephone}</p></td>
 									<td><p>
 											<a href="membre?idMembre=${membre.idMembre}"
 												title="Détails ${membre.prenom} "> <span></span>Détails
 												du Membre
 											</a>
 										</p></td>
+										
+									<td><p>
+											<a href="supprimerMembre?idMembre=${membre.idMembre}"
+												title="Supprimer le membre : ${membre.idMembre}">
+												<span> Supprimer</span>
+											</a>
+										</p></td>	 	
 								</tr>
 							</c:forEach>
 						</tbody>

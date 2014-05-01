@@ -74,7 +74,7 @@
 						<div>
 							<br />
 							<p>
-								<a href="listeRecettes">Retour à la liste des Recettes</a>
+								<a href="listeRecettesPublic">Retour à la liste des Recettes</a>
 							</p>
 							<br />
 						</div>

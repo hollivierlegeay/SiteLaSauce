@@ -74,7 +74,7 @@ public class EvenementDao {
 
 				// Utiliser la connexion
 				PreparedStatement stmt = connection
-						.prepareStatement("DELETE FROM Evenement WHERE idEvenement = ?");
+						.prepareStatement("DELETE FROM evenement WHERE idEvenement = ?");
 
 				stmt.setInt(1, idEvenement);
 				stmt.executeUpdate();

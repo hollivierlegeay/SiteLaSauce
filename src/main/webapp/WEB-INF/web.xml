@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" version="3.0">
-    <filter>
+  <filter>
     <filter-name>RestrictionFilter</filter-name>
     <filter-class>hei.devweb.filters.RestrictionFilter</filter-class>
   </filter>
@@ -8,11 +8,10 @@
     <filter-name>RestrictionFilter</filter-name>
     <url-pattern>/ajouterRecette</url-pattern>
   </filter-mapping>
-    <filter-mapping>
+  <filter-mapping>
     <filter-name>RestrictionFilter</filter-name>
     <url-pattern>/indexM</url-pattern>
   </filter-mapping>
-  
   <welcome-file-list>
     <welcome-file>index</welcome-file>
   </welcome-file-list>
@@ -29,6 +28,10 @@
     <servlet-class>hei.devweb.servlets.ListeRecettesServlet</servlet-class>
   </servlet>
   <servlet>
+    <servlet-name>ListeRecettesPublic</servlet-name>
+    <servlet-class>hei.devweb.servlets.ListeRecettesPublicServlet</servlet-class>
+  </servlet>
+  <servlet>
     <servlet-name>Recette</servlet-name>
     <servlet-class>hei.devweb.servlets.RecetteServlet</servlet-class>
   </servlet>
@@ -37,16 +40,28 @@
     <servlet-class>hei.devweb.servlets.AjoutRecetteServlet</servlet-class>
   </servlet>
   <servlet>
+    <servlet-name>SuppressionRecette</servlet-name>
+    <servlet-class>hei.devweb.servlets.SuppressionRecetteServlet</servlet-class>
+  </servlet>
+  <servlet>
     <servlet-name>ListeEvenements</servlet-name>
     <servlet-class>hei.devweb.servlets.ListeEvenementsServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>ListeEvenementsPublic</servlet-name>
+    <servlet-class>hei.devweb.servlets.ListeEvenementsPublicServlet</servlet-class>
   </servlet>
   <servlet>
     <servlet-name>Evenement</servlet-name>
     <servlet-class>hei.devweb.servlets.EvenementServlet</servlet-class>
   </servlet>
-    <servlet>
+  <servlet>
     <servlet-name>AjoutEvenement</servlet-name>
     <servlet-class>hei.devweb.servlets.AjoutEvenementServlet</servlet-class>
+  </servlet>
+    <servlet>
+    <servlet-name>SuppressionEvenement</servlet-name>
+    <servlet-class>hei.devweb.servlets.SuppressionEvenementServlet</servlet-class>
   </servlet>
   <servlet>
     <servlet-name>Equipe</servlet-name>
@@ -57,8 +72,16 @@
     <servlet-class>hei.devweb.servlets.ListeEquipesServlet</servlet-class>
   </servlet>
   <servlet>
+    <servlet-name>ListeEquipesPublic</servlet-name>
+    <servlet-class>hei.devweb.servlets.ListeEquipesPublicServlet</servlet-class>
+  </servlet>
+  <servlet>
     <servlet-name>AjoutEquipe</servlet-name>
     <servlet-class>hei.devweb.servlets.AjoutEquipeServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>SuppressionEquipe</servlet-name>
+    <servlet-class>hei.devweb.servlets.SuppressionEquipeServlet</servlet-class>
   </servlet>
   <servlet>
     <servlet-name>Contact</servlet-name>
@@ -72,9 +95,13 @@
     <servlet-name>ListeMembres</servlet-name>
     <servlet-class>hei.devweb.servlets.ListeMembresServlet</servlet-class>
   </servlet>
- <servlet>
+  <servlet>
     <servlet-name>AjoutMembre</servlet-name>
     <servlet-class>hei.devweb.servlets.AjoutMembreServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>SuppressionMembre</servlet-name>
+    <servlet-class>hei.devweb.servlets.SuppressionMembreServlet</servlet-class>
   </servlet>
   <servlet>
     <servlet-name>Connexion</servlet-name>
@@ -97,36 +124,60 @@
     <url-pattern>/listeRecettes</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
+    <servlet-name>ListeRecettesPublic</servlet-name>
+    <url-pattern>/listeRecettesPublic</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
     <servlet-name>Recette</servlet-name>
     <url-pattern>/recette</url-pattern>
   </servlet-mapping>
-    <servlet-mapping>
+  <servlet-mapping>
     <servlet-name>AjoutRecette</servlet-name>
     <url-pattern>/ajouterRecette</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>SuppressionRecette</servlet-name>
+    <url-pattern>/supprimerRecette</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
     <servlet-name>ListeEvenements</servlet-name>
     <url-pattern>/listeEvenements</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
+    <servlet-name>ListeEvenementsPublic</servlet-name>
+    <url-pattern>/listeEvenementsPublic</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
     <servlet-name>Evenement</servlet-name>
     <url-pattern>/evenement</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>AjoutEvenement</servlet-name>
+    <url-pattern>/ajouterEvenement</url-pattern>
+  </servlet-mapping>
+   <servlet-mapping>
+    <servlet-name>SuppressionEvenement</servlet-name>
+    <url-pattern>/supprimerEvenement</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
     <servlet-name>ListeEquipes</servlet-name>
     <url-pattern>/listeEquipes</url-pattern>
   </servlet-mapping>
-    <servlet-mapping>
-    <servlet-name>AjoutEvenement</servlet-name>
-    <url-pattern>/ajouterEvenement</url-pattern>
+  <servlet-mapping>
+    <servlet-name>ListeEquipesPublic</servlet-name>
+    <url-pattern>/listeEquipesPublic</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
     <servlet-name>Equipe</servlet-name>
     <url-pattern>/equipe</url-pattern>
   </servlet-mapping>
-      <servlet-mapping>
+  <servlet-mapping>
     <servlet-name>AjoutEquipe</servlet-name>
     <url-pattern>/ajouterEquipe</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>SuppressionEquipe</servlet-name>
+    <url-pattern>/supprimerEquipe</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
     <servlet-name>Contact</servlet-name>
@@ -140,9 +191,13 @@
     <servlet-name>Membre</servlet-name>
     <url-pattern>/membre</url-pattern>
   </servlet-mapping>
-    <servlet-mapping>
+  <servlet-mapping>
     <servlet-name>AjoutMembre</servlet-name>
     <url-pattern>/ajouterMembre</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>SuppressionMembre</servlet-name>
+    <url-pattern>/supprimerMembre</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
     <servlet-name>Connexion</servlet-name>
@@ -152,8 +207,6 @@
     <servlet-name>Deconnexion</servlet-name>
     <url-pattern>/deconnexion</url-pattern>
   </servlet-mapping>
- 
-
   <filter>
     <filter-name>Set Character Encoding</filter-name>
     <filter-class>

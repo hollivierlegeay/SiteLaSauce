@@ -16,36 +16,36 @@
 
 <!--Contient la majeure partie du code, ce qui est écrit est affiché à l'écran-->
 <body>
+
 	<div id="fondblanc">
+
 		<p>
 			<img class="baniere" src="Images/baniere.jpg" alt="Banière du site" />
 		</p>
+
 		<!-- Menu de navigation -->
-		<c:set var="pageSelectionnee" value="listeEquipes" scope="request"></c:set>
+		<c:set var="pageSelectionnee" value="listeEvenements" scope="request"></c:set>
 		<jsp:include page="menu.jsp" />
-		<c:forEach var="equipe" items="${equipes}">
-			<div class="cadre1Equipe">
-				<div class="cadre2Equipe">
-					<div class="cadre3Equipe">
-						<div class="cadre4Equipe">
-							<img class="photoEquipe" src="${equipe.imgEquipe}"
-								alt="L'équipe 2013-2014" />
-							<div class="nomEquipe">
-								<p class="descriptionEquipe">
-									${equipe.anneeMandat}<br>
-									${equipe.descriptionEquipe}
+
+		<div id="cadreBleuEvenements">
+			<div id="cadreBlancEvenements">
+				<c:forEach var="evenement" items="${evenements}">
+					<tr>
+						<td><div class="lienEvenement">
+								<p class="nomEvenement">${evenement.titreEvenement}</p>
+								<p class="descriptionEvenement">
+									${evenement.dateEvenement}<br>
+									${evenement.detailEvenement}<br>
+									${evenement.lieuEvenement}
 								</p>
-								<p>
-								<a href="supprimerEquipe?idEquipe=${equipe.idEquipe}"
-									title="Supprimer l'Equipe : ${equipe.idEquipe}"> <span>
-										Supprimer</span></a>
-							</p>
-							</div>
-		</c:forEach>
-	</div>
-	</div>
-	</div>
-	</div>
+							</div></td>
+						
+					</tr>
+				</c:forEach>
+
+
+			</div>
+		</div>
 	</div>
 </body>
 </html>

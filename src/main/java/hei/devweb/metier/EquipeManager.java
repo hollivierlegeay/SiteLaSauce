@@ -43,4 +43,9 @@ public class EquipeManager {
 		equipeDao.ajouterEquipe(equipe);
 	}
 
+
+	public void supprimerEquipe(Integer idEquipe) {
+		equipeDao.supprimerEquipe(idEquipe);
+	}
+
 }

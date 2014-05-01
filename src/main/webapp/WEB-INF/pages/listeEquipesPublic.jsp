@@ -35,11 +35,6 @@
 									${equipe.anneeMandat}<br>
 									${equipe.descriptionEquipe}
 								</p>
-								<p>
-								<a href="supprimerEquipe?idEquipe=${equipe.idEquipe}"
-									title="Supprimer l'Equipe : ${equipe.idEquipe}"> <span>
-										Supprimer</span></a>
-							</p>
 							</div>
 		</c:forEach>
 	</div>
