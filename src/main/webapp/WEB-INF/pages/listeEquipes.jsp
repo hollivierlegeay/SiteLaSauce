@@ -8,8 +8,9 @@
 <head>
 <!--Encodage utilisé (pour les accents ...)-->
 <meta charset="utf-8" />
-<!--Lien avec la page CSS-->
-<link rel="stylesheet" href="css/codeCSS.css" />
+	<!--Liens-->
+		<link rel="stylesheet" href="css/codeCSS.css"/>
+		<link rel="shortcut icon" href="Images/favicon.ico">
 <!--Titre s'affichant dans l'onglet du navigateur-->
 <title>LaSauce</title>
 </head>
@@ -20,32 +21,40 @@
 		<p>
 			<img class="baniere" src="Images/baniere.jpg" alt="Banière du site" />
 		</p>
+
 		<!-- Menu de navigation -->
 		<c:set var="pageSelectionnee" value="listeEquipes" scope="request"></c:set>
-		<jsp:include page="menu.jsp" />
+		<jsp:include page="menuM.jsp" />
+
+<br>
+<br>	
+<h1> Les équipes</h1>
+		<section>
+		<article>	
+			<table>
+				<tr>
+					<th>Année de mandat</th>
+					<th>Description</th>
+					<th>Photo</th>
+					<th class="action">Supprimer</th>
+					
 		<c:forEach var="equipe" items="${equipes}">
-			<div class="cadre1Equipe">
-				<div class="cadre2Equipe">
-					<div class="cadre3Equipe">
-						<div class="cadre4Equipe">
-							<img class="photoEquipe" src="${equipe.imgEquipe}"
-								alt="L'équipe 2013-2014" />
-							<div class="nomEquipe">
-								<p class="descriptionEquipe">
-									${equipe.anneeMandat}<br>
-									${equipe.descriptionEquipe}
-								</p>
-								<p>
-								<a href="supprimerEquipe?idEquipe=${equipe.idEquipe}"
-									title="Supprimer l'Equipe : ${equipe.idEquipe}"> <span>
-										Supprimer</span></a>
-							</p>
-							</div>
-		</c:forEach>
-	</div>
-	</div>
-	</div>
-	</div>
-	</div>
+			<tr>
+				<td><p class=font>${equipe.anneeMandat}</p></td>
+				<td><p class=font>${equipe.descriptionEquipe}</p></td>
+				<td><p class=font><img src="${equipe.imgEquipe}" alt="${equipe.anneeMandat}" style="height:80px; border:solid 1px silver; border-radius:10px;"  /></p></td>
+				<td class="action"><a href="supprimerEquipe?idEquipe=${equipe.idEquipe}"
+									title="Supprimer l'Equipe : ${equipe.idEquipe}"> 
+									<img src="Images/supprimer.png" alt="Supprimer" /></a></td>
+					
+				</tr>
+			</c:forEach>
+		</table>
+	</article>	
+	<article>
+	<p> <br> <br> <br> </p>
+	</article>
+</section>	
+</div>
 </body>
 </html>

@@ -8,8 +8,9 @@
 <head>
 <!--Encodage utilisé (pour les accents ...)-->
 <meta charset="utf-8" />
-<!--Lien avec la page CSS-->
-<link rel="stylesheet" href="css/codeCSS.css" />
+	<!--Liens-->
+		<link rel="stylesheet" href="css/codeCSS.css"/>
+		<link rel="shortcut icon" href="Images/favicon.ico">
 <!--Titre s'affichant dans l'onglet du navigateur-->
 <title>LaSauce</title>
 </head>
@@ -34,15 +35,13 @@
 						<td><div class="lienEvenement">
 								<p class="nomEvenement">${evenement.titreEvenement}</p>
 								<p class="descriptionEvenement">
-									${evenement.dateEvenement}<br>
-									${evenement.detailEvenement}<br>
-									${evenement.lieuEvenement}
+									${evenement.detailEvenement}<br><br>
+									date : ${evenement.dateEvenement}<br>
+									lieu : ${evenement.lieuEvenement}
 								</p>
 							</div></td>
-						
-					</tr>
+						</tr>
 				</c:forEach>
-
 
 			</div>
 		</div>

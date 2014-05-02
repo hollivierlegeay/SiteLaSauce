@@ -7,8 +7,9 @@
 <head>
 <!--Encodage utilisé (pour les accents ...)-->
 <meta charset="utf-8" />
-<!--Lien avec la page CSS-->
-<link rel="stylesheet" href="css/codeCSS.css" />
+	<!--Liens-->
+		<link rel="stylesheet" href="css/codeCSS.css"/>
+		<link rel="shortcut icon" href="Images/favicon.ico">
 <!--Titre s'affichant dans l'onglet du navigateur-->
 <title>LaSauce - Les Recettes</title>
 </head>
@@ -20,35 +21,40 @@
 		<p>
 			<img class="baniere" src="Images/baniere.jpg" alt="Banière du site" />
 		</p>
-
 		<!-- Menu de navigation -->
 		<c:set var="pageSelectionnee" value="listeRecettes" scope="request"></c:set>
 		<jsp:include page="menuM.jsp" />
-
-		<div>
+<br>
+<br>
+	
+<h1> Les Recettes</h1>
+		<section>
+		<article>
 			<table>
-				<tbody>
-					<c:forEach var="recette" items="${recettes}">
-						<tr>
-						<td><div class="lienRecette"> 
-							<p>${recette.titrePlat}</p>
-							 </div></td>
-						<td><p>
-							<a href="recette?idRecette=${recette.idRecette}"
-												title="Détails ${recette.titrePlat}"> <span>Détails
-													de la Recette</span></a>
-						</p></td>
-						<td><p>
-											<a href="supprimerRecette?idRecette=${recette.idRecette}"
+			<tr>
+				<th>Titre</th>
+				<th>Difficulté</th>
+				<th>Type Plat</th>
+				<th>Image</th>
+				<th class="action">Supprimer</th>
+				</tr>
+				<c:forEach var="recette" items="${recettes}">
+					<tr>
+						<td><p class=font>${recette.titrePlat}</p></td>
+						<td><p class=font>${recette.difficulte}</p></td>
+						<td><p class=font>${recette.typePlat}</p></td>
+						<td><p class=font><img src="${recette.imgRecette}" alt="${recette.titrePlat}" style="height:80px; border:solid 1px silver; border-radius:10px;"  /></p></td>
+						<td class="action"> <a href="supprimerRecette?idRecette=${recette.idRecette}"
 												title="Supprimer la Recette : ${recette.idRecette}">
-												<span> Supprimer</span>
-											</a>
-										</p></td>	 
-						</tr>
-					</c:forEach>
-				</tbody>
+											<img src="Images/supprimer.png" alt="Supprimer" /></a></td>	 
+					</tr>
+				</c:forEach>
 			</table>
-		</div>
+		</article>
+		<article>
+				<p> <br> <br> <br> </p>
+		</article>
+	</section>	
 	</div>
 </body>
 </html>

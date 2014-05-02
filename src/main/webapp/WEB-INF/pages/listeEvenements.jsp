@@ -8,8 +8,9 @@
 <head>
 <!--Encodage utilisé (pour les accents ...)-->
 <meta charset="utf-8" />
-<!--Lien avec la page CSS-->
-<link rel="stylesheet" href="css/codeCSS.css" />
+	<!--Liens-->
+		<link rel="stylesheet" href="css/codeCSS.css"/>
+		<link rel="shortcut icon" href="Images/favicon.ico">
 <!--Titre s'affichant dans l'onglet du navigateur-->
 <title>LaSauce</title>
 </head>
@@ -25,31 +26,39 @@
 
 		<!-- Menu de navigation -->
 		<c:set var="pageSelectionnee" value="listeEvenements" scope="request"></c:set>
-		<jsp:include page="menu.jsp" />
-
-		<div id="cadreBleuEvenements">
-			<div id="cadreBlancEvenements">
+		<jsp:include page="menuM.jsp" />
+	
+	<br>
+<br>
+	
+<h1> Les évènements</h1>
+	<section>
+		<article>	
+			<table >
+				<tr>
+					<th>Titre </th>
+					<th>Détail</th>
+					<th>  Date  </th>
+					<th>Lieu</th>
+					<th class="action">Supprimer</th>
+					</tr>
 				<c:forEach var="evenement" items="${evenements}">
 					<tr>
-						<td><div class="lienEvenement">
-								<p class="nomEvenement">${evenement.titreEvenement}</p>
-								<p class="descriptionEvenement">
-									${evenement.dateEvenement}<br>
-									${evenement.detailEvenement}<br>
-									${evenement.lieuEvenement}
-								</p>
-							</div></td>
-						<td><p>
-								<a href="supprimerEvenement?idEvenement=${evenement.idEvenement}"
+						<td><p class=font>${evenement.titreEvenement}</p></td>
+						<td><p class=font>${evenement.detailEvenement}</p></td>
+						<td><p class=font>${evenement.dateEvenement}</p></td>
+						<td><p class=font>${evenement.lieuEvenement}</p></td>		
+						<td class="action"><a href="supprimerEvenement?idEvenement=${evenement.idEvenement}"
 									title="Supprimer l'evenement : ${evenement.idEvenement}"> 
-									<span>Supprimer</span></a>
-							</p></td>
+									<img src="Images/supprimer.png" alt="Supprimer" /></a></td>
 					</tr>
 				</c:forEach>
-
-
-			</div>
-		</div>
+				</table>
+			</article>	
+			<article>
+				<p> <br> <br> <br> </p>
+			</article>
+		</section>	
 	</div>
 </body>
 </html>

@@ -7,8 +7,9 @@
 <head>
 <!--Encodage utilisé (pour les accents ...)-->
 <meta charset="utf-8" />
-<!--Lien avec la page CSS-->
-<link rel="stylesheet" href="css/codeCSS.css" />
+	<!--Liens-->
+		<link rel="stylesheet" href="css/codeCSS.css"/>
+		<link rel="shortcut icon" href="Images/favicon.ico">
 <!--Titre s'affichant dans l'onglet du navigateur-->
 <title>LaSauce - Connexion à l'espace Membre</title>
 </head>
@@ -23,6 +24,7 @@
 		<c:set var="pageSelectionnee" value="connexion" scope="request"></c:set>
 		<jsp:include page="menu.jsp" />
 
+	<h1 class="contact">Espace réservé aux membres de l'association</h1>
 	<form method="post" action="connexion">
 		<fieldset>
 			<legend>Connexion à l'espace Membre</legend>
@@ -41,8 +43,7 @@
 
  			<p class="${empty form.erreurs ? 'succes' : 'erreur'}">${form.resultat}</p>
 			
-			<%--Vérification de la présence d'un objet
-utilisateur en session--%>
+			<%--Vérification de la présence d'un objet utilisateur en session--%>
 
 			<c:if test="${!empty sessionScope.sessionUtilisateur}">
 				<%--Si l'utilisateur existe en session, alors on affiche son adresse email.--%>
@@ -50,7 +51,9 @@ utilisateur en session--%>
 				<p class="succes">Succès de la connexion. <br /> Vous êtes connecté(e) avec l'adresse :
 					${sessionScope.sessionUtilisateur.email}
 					<br /> 
-					<a href="indexM">Accéder à l'espace Membres</a>
+					<br /> 
+				
+					<a href="indexM"><input class = "acces" type="button" id="button-membre" value="Accéder à l'espace Membres" /></a>
 					</p> 
 			</c:if>
 

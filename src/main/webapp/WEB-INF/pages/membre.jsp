@@ -8,8 +8,9 @@
 	<head>
 		<!--Encodage utilisé (pour les accents ...)-->
 		<meta charset="utf-8"/>
-		<!--Lien avec la page CSS-->
+	<!--Liens-->
 		<link rel="stylesheet" href="css/codeCSS.css"/>
+		<link rel="shortcut icon" href="Images/favicon.ico">
 		<!--Titre s'affichant dans l'onglet du navigateur-->
 		<title>LaSauce</title>
 	</head>

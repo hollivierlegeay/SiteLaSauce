@@ -5,27 +5,21 @@
 <head>
 <meta charset="utf-8" />
 <title>Création d'une Equipe</title>
-<link rel="stylesheet" href="css/codeCSS.css" />
+	<!--Liens-->
+		<link rel="stylesheet" href="css/codeCSS.css"/>
+		<link rel="shortcut icon" href="Images/favicon.ico">
 </head>
 <body>
-	<div>
-
+	
 		<div id="fondblanc">
 			<p>
 				<img class="baniere" src="Images/baniere.jpg" alt="Banière du site" />
 			</p>
+			<!-- Menu de navigation de l'espace membre -->
+			<c:set var="pageSelectionnee" value="ajouterEquipe" scope="request" />
+			<jsp:include page="menuM.jsp" />
 
-			<!-- Menu de navigation général-->
-			<c:set var="pageSelectionnee" value="connexion" scope="request"></c:set>
-			<jsp:include page="menu.jsp" />
-			<fieldset>
-				<legend>Espace Membre</legend>
-				<!-- Menu de navigation de l'espace membre -->
-				<c:set var="pageSelectionnee" value="ajouterEquipe" scope="request" />
-				<jsp:include page="menuM.jsp" />
-			</fieldset>
-
-			<h1>Création d'une Equipe</h1>
+			<h1 class=titreform>Création d'une Equipe</h1>
 			<form method="post" action="ajouterEquipe">
 				<fieldset>
 					<legend>Informations Equipe</legend>
@@ -43,15 +37,12 @@
 				</textarea>
 					<br />
 				</fieldset>
+				<div class="boutons">
 				<input type="submit" value="Valider" /> <input type="reset"
 					value="Remettre à zéro" /> <br />
-
+				</div>
 			</form>
-			<p class="${pageSelectionnee == 'listeEquipes' ? 'active' : ''}">
-				<a href="listeEquipes">Retour à la liste des Equipes</a>
-			</p>
-		</div>
-
+		<p><br></p>
 	</div>
 </body>
 </html>

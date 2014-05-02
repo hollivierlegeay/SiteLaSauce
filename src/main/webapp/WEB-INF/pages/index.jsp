@@ -10,9 +10,9 @@
 		<!--Titre s'affichant dans l'onglet du navigateur-->
 		<title>LaSauce - Accueil </title>
 		
-		<!--Lien avec la page CSS-->
+		<!--Liens-->
 		<link rel="stylesheet" href="css/codeCSS.css"/>
-		<link rel="stylesheet" href="css/flexslider.css" />
+		<link rel="shortcut icon" href="Images/favicon.ico">
 
 </head>
 
@@ -34,19 +34,7 @@
 			</div>
 		</div>
 
-<!-- 	<div >
-     	<section class="slider">
-     		<div class="flexslider">
-     			<ul class="slides">
-   				 <li><img src="Images/photo6.jpg" width=636 height=366 /></li>
-   				 <li><img src="Images/photo2.jpg"width=636 height=366/></li>
-    			 <li><img src="Images/photo3.jpg"width=636 height=366/></li>
-   				 <li><img src="Images/photo4.jpg"width=636 height=366/></li>  
-      			</ul>
-        	</div>
-      </section>
-  </div> -->
- 
+
   
  <!-- jQuery -->
  <script type="text/javascript" src="jquery.js"></script> 

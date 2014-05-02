@@ -8,8 +8,9 @@
 <head>
 <!--Encodage utilisé (pour les accents ...)-->
 <meta charset="utf-8" />
-<!--Lien avec la page CSS-->
-<link rel="stylesheet" href="css/codeCSS.css" />
+	<!--Liens-->
+		<link rel="stylesheet" href="css/codeCSS.css"/>
+		<link rel="shortcut icon" href="Images/favicon.ico">
 <!--Titre s'affichant dans l'onglet du navigateur-->
 <title>LaSauce</title>
 </head>
@@ -23,49 +24,42 @@
 			<img class="baniere" src="Images/baniere.jpg" alt="Banière du site" />
 		</p>
 	
-	<fieldset>
- 	<legend>Espace Membre</legend>	
+	
  	<!-- Menu de navigation -->
 		<c:set var="pageSelectionnee" value="listeMembres" scope="request"></c:set>
 		<jsp:include page="menuM.jsp" />	 
-	</fieldset>
+<br>
+<br>
 	
-		<div id="cadreBleuEvenements">
-			<div id="cadreBlancEvenements">
-					<div>
-					<table >
-						<thead>
-							<tr>
-								<th></th>
-							</tr>
-						</thead>
-						<tbody>
-							<c:forEach var="membre" items="${membres}">
-								<tr>
-									<td><p class=font>${membre.nom}</p></td>
-									<td><p class=font>${membre.prenom}</p></td>
-									<td><p class=font>${membre.telephone}</p></td>
-									<td><p>
-											<a href="membre?idMembre=${membre.idMembre}"
-												title="Détails ${membre.prenom} "> <span></span>Détails
-												du Membre
-											</a>
-										</p></td>
-										
-									<td><p>
-											<a href="supprimerMembre?idMembre=${membre.idMembre}"
+<h1> Les Membres</h1>
+		<section>
+		<article>	
+			<table >
+				<tr>
+					<th>Nom</th>
+					<th>Prénom</th>
+					<th>Téléphone</th>
+					<th>Email</th>
+					<th class="action">Supprimer</th>
+					</tr>
+					<c:forEach var="membre" items="${membres}">
+						<tr>
+							<td><p class=font>${membre.nom}</p></td>
+							<td><p class=font>${membre.prenom}</p></td>
+							<td><p class=font>${membre.telephone}</p></td>
+							<td><p class=font>${membre.mailHEI}</p></td>
+							<td class="action"><a href="supprimerMembre?idMembre=${membre.idMembre}"
 												title="Supprimer le membre : ${membre.idMembre}">
-												<span> Supprimer</span>
-											</a>
-										</p></td>	 	
-								</tr>
-							</c:forEach>
-						</tbody>
+												<img src="Images/supprimer.png" alt="Supprimer" /></a></td>	 	
+						</tr>
+					</c:forEach>
 					</table>
-				</div>
-
-			</div>
-		</div>
+					</article>	
+				<article>
+				<p> <br> <br> <br> </p>
+				</article>
+			</section>	
+	
 	</div>
 </body>
 </html>

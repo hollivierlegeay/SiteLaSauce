@@ -8,8 +8,9 @@
 <head>
 <!--Encodage utilisé (pour les accents ...)-->
 <meta charset="utf-8" />
-<!--Lien avec la page CSS-->
+<!--Liens-->
 <link rel="stylesheet" href="css/codeCSS.css" />
+<link rel="shortcut icon" href="Images/favicon.ico">
 <!--Titre s'affichant dans l'onglet du navigateur-->
 <title>LaSauce</title>
 </head>
@@ -23,24 +24,27 @@
 		<!-- Menu de navigation -->
 		<c:set var="pageSelectionnee" value="listeEquipes" scope="request"></c:set>
 		<jsp:include page="menu.jsp" />
+
+		<h1>Notre Equipe</h1>
+
 		<c:forEach var="equipe" items="${equipes}">
+
+			<p class="nomEquipe">L'Equipe ${equipe.anneeMandat}</p>
+
 			<div class="cadre1Equipe">
 				<div class="cadre2Equipe">
 					<div class="cadre3Equipe">
 						<div class="cadre4Equipe">
-							<img class="photoEquipe" src="${equipe.imgEquipe}"
-								alt="L'équipe 2013-2014" />
-							<div class="nomEquipe">
-								<p class="descriptionEquipe">
-									${equipe.anneeMandat}<br>
-									${equipe.descriptionEquipe}
-								</p>
-							</div>
+							<img class="photoEquipe" src="${equipe.imgEquipe}"alt="L'équipe  ${equipe.anneeMandat} " />
+						</div>
+					</div>
+				</div>
+			</div>
+				<p class="descriptionEquipe">
+					 ${equipe.descriptionEquipe}<br><br>
+				</p>
 		</c:forEach>
-	</div>
-	</div>
-	</div>
-	</div>
+
 	</div>
 </body>
 </html>

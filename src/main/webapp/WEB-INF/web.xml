@@ -6,12 +6,41 @@
   </filter>
   <filter-mapping>
     <filter-name>RestrictionFilter</filter-name>
-    <url-pattern>/ajouterRecette</url-pattern>
+    <url-pattern>/indexM</url-pattern>
   </filter-mapping>
   <filter-mapping>
     <filter-name>RestrictionFilter</filter-name>
-    <url-pattern>/indexM</url-pattern>
+    <url-pattern>/ajouterRecette</url-pattern>
   </filter-mapping>
+   <filter-mapping>
+    <filter-name>RestrictionFilter</filter-name>
+    <url-pattern>/ajouterEvenement</url-pattern>
+  </filter-mapping>
+   <filter-mapping>
+    <filter-name>RestrictionFilter</filter-name>
+    <url-pattern>/ajouterEquipe</url-pattern>
+  </filter-mapping>
+   <filter-mapping>
+    <filter-name>RestrictionFilter</filter-name>
+    <url-pattern>/ajouterMembre</url-pattern>
+  </filter-mapping>
+  <filter-mapping>
+    <filter-name>RestrictionFilter</filter-name>
+    <url-pattern>/listeRecettes</url-pattern>
+    </filter-mapping>
+    <filter-mapping>
+    <filter-name>RestrictionFilter</filter-name>
+    <url-pattern>/listeEvenements</url-pattern>
+  </filter-mapping>
+  <filter-mapping>
+    <filter-name>RestrictionFilter</filter-name>
+    <url-pattern>/listeEquipes</url-pattern>
+  </filter-mapping>
+  <filter-mapping>
+    <filter-name>RestrictionFilter</filter-name>
+    <url-pattern>/listeMembres</url-pattern>
+  </filter-mapping>   
+  
   <welcome-file-list>
     <welcome-file>index</welcome-file>
   </welcome-file-list>
