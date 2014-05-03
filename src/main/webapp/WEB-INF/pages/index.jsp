@@ -13,19 +13,30 @@
 		<!--Liens-->
 		<link rel="stylesheet" href="css/codeCSS.css"/>
 		<link rel="shortcut icon" href="Images/favicon.ico">
+		
+		<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+
+		<!-- Demo CSS -->
+		<link rel="stylesheet" href="demo/css/demo.css" type="text/css" media="screen" />
+		<link rel="stylesheet" href="flexslider.css" type="text/css" media="screen" />
+
+		<!-- Modernizr -->
+		<script src="demo/js/modernizr.js"></script>
 
 </head>
 
-<body>
-<div>
+<body class="loading">
+
 	<div id="fondblanc">
 	<p>
 	<img class="baniere" src="Images/baniere.jpg" alt="Banière du site" />
 	</p>	
+	
 	<!-- Menu de navigation -->
-		<c:set var="pageSelectionnee" value="index" scope="request"></c:set>
-		<jsp:include page="menu.jsp" />
-
+	<c:set var="pageSelectionnee" value="index" scope="request"></c:set>
+	<jsp:include page="menu.jsp" />
+	
+	<!--Encadre de bienvenue -->
 		<div id="encadreBleu">
 			<div id="encadreBienvenue">
 			<h3 id="titreBienvenue">Bienvenue <br> sur le site de LaSauce, l'association de cuisine d'Hei</h3>
@@ -34,22 +45,68 @@
 			</div>
 		</div>
 
+			<!-- Slider -->
+			<div id="container" class="cf">
+				<div id="main">
+					<section class="slider">
+						<div class="flexslider">
+							<ul class="slides">
+								<li>
+									<img src="demo/images/kitchen_adventurer_cheesecake_brownie.jpg" width="400" height="300"/>
+								</li>
+								<li>
+									<img src="demo/images/kitchen_adventurer_lemon.jpg" width="400" height="300"/>
+								</li>
+								<li>
+									<img src="demo/images/kitchen_adventurer_donut.jpg" width="400" height="300"/>
+								</li>
+								<li>
+									<img src="demo/images/kitchen_adventurer_caramel.jpg" width="400" height="300" />
+								</li>
+								<li>
+									<img src="demo/images/photo2.jpg" width="400" height="300"/>
+								</li>
+								<li>
+									<img src="demo/images/photo6.jpg" width="400" height="300"/>
+								</li>
+							</ul>
+						</div>
+					</section>  
+				</div>
+			</div>
 
-  
- <!-- jQuery -->
- <script type="text/javascript" src="jquery.js"></script> 
-  
-<!-- FlexSlider -->
-<script type="text/javascript" src="jquery.flexslider.js"></script>
+		</div>
 
-<!-- <script type="text/javascript">
-$(window).load(function() {
-	  $('.flexslider').flexslider({
-	    animation: "slide"
-	  });
-	}); 
-</script>	 -->	
- </div>
-</div>
+	  <!-- jQuery -->
+	  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+	  <script>window.jQuery || document.write('<script src="js/libs/jquery-1.7.min.js">\x3C/script>')</script>
+
+	  <!-- FlexSlider -->
+	  <script defer src="jquery.flexslider.js"></script>
+
+	  <script type="text/javascript">
+		$(function(){
+		  SyntaxHighlighter.all();
+		});
+		$(window).load(function(){
+		  $('.flexslider').flexslider({
+			animation: "slide",
+			start: function(slider){
+			  $('body').removeClass('loading');
+			}
+		  });
+		});
+	  </script>
+
+
+	  <!-- Syntax Highlighter -->
+	  <script type="text/javascript" src="demo/js/shCore.js"></script>
+	  <script type="text/javascript" src="demo/js/shBrushXml.js"></script>
+	  <script type="text/javascript" src="demo/js/shBrushJScript.js"></script>
+
+	  <!-- Optional FlexSlider Additions -->
+	  <script src="demo/js/jquery.easing.js"></script>
+	  <script src="demo/js/jquery.mousewheel.js"></script>
+	  <script defer src="demo/js/demo.js"></script>
 </body>
 </html>

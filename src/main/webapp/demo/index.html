@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+
+	<!--Informations sur la page, pas affiché sur la page -->
+	<head>
+		<!--Encodage utilisé (pour les accents ...)-->
+		<meta charset="utf-8"/>
+		<!--Titre s'affichant dans l'onglet du navigateur-->
+		<title>LaSauce</title>
+		
+		<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+
+		<!-- Demo CSS -->
+		<link rel="stylesheet" href="css/demo.css" type="text/css" media="screen" />
+		<link rel="stylesheet" href="../flexslider.css" type="text/css" media="screen" />
+
+		<!-- Modernizr -->
+		<script src="js/modernizr.js"></script>
+	</head>
+
+
+	<!--Contient la majeure partie du code, ce qui est écrit est affiché à l'écran-->
+	<body class="loading">
+			
+		<div id="fondblanc">
+		
+			<p>
+				<img class="baniere" src="images/baniere.jpg" alt="Banière du site" />
+			</p>
+		
+			<!-- Elements composant la barre de menu -->		
+			<ul id="menu">
+				<li id="accueil"><a><u>Accueil</u></a></li>
+				<li class="separation"><a>~</a></li> 
+				<li id="lesrecettes"><a href="LesRecettes.html">Les Recettes</a></li>
+				<li class="separation"><a>~</a></li> 
+				<li id="evenements"><a href="Evenements.html">Evènements</a></li>
+				<li class="separation"><a>~</a></li> 
+				<li id="notreequipe"><a href="NotreEquipe.html">Notre Equipe</a></li> 
+				<li class="separation"><a>~</a></li> 
+				<li id="contact"><a href="Contact.html">Contact</a></li> 
+				<li class="separation"><a>~</a></li> 
+				<li id="membre"><a href="Membre.html">Membre</a></li> 
+			</ul>
+			
+			<!--Encadre de bienvenue -->
+			<div id="encadreBleu">
+				
+				<div id="encadreBienvenue">
+					<h3 id="titreBienvenue">Bienvenue <br> sur le site de LaSauce, l'association de cuisine d'Hei</h3>
+					<p id="texteBienvenue">Depuis 3 ans, LaSauce redonne aux Heiens le plaisir de bien manger !
+					LaSauce d'HEI est une association qui a été crée dans le but de rassembler les élèves de l'école autour du plaisir de la cuisine !
+				</div>
+			
+			</div>
+			
+		
+			<!-- Slider -->
+			<div id="container" class="cf">
+				<div id="main">
+					<section class="slider">
+						<div class="flexslider">
+							<ul class="slides">
+								<li>
+									<img src="images/kitchen_adventurer_cheesecake_brownie.jpg" width="400" height="300"/>
+								</li>
+								<li>
+									<img src="images/kitchen_adventurer_lemon.jpg" width="400" height="300"/>
+								</li>
+								<li>
+									<img src="images/kitchen_adventurer_donut.jpg" width="400" height="300"/>
+								</li>
+								<li>
+									<img src="images/kitchen_adventurer_caramel.jpg" width="400" height="300" />
+								</li>
+								<li>
+									<img src="images/photo2.jpg" width="400" height="300"/>
+								</li>
+								<li>
+									<img src="images/photo6.jpg" width="400" height="300"/>
+								</li>
+							</ul>
+						</div>
+					</section>  
+				</div>
+			</div>
+
+		</div>
+
+	  <!-- jQuery -->
+	  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+	  <script>window.jQuery || document.write('<script src="js/libs/jquery-1.7.min.js">\x3C/script>')</script>
+
+	  <!-- FlexSlider -->
+	  <script defer src="../jquery.flexslider.js"></script>
+
+	  <script type="text/javascript">
+		$(function(){
+		  SyntaxHighlighter.all();
+		});
+		$(window).load(function(){
+		  $('.flexslider').flexslider({
+			animation: "slide",
+			start: function(slider){
+			  $('body').removeClass('loading');
+			}
+		  });
+		});
+	  </script>
+
+
+	  <!-- Syntax Highlighter -->
+	  <script type="text/javascript" src="js/shCore.js"></script>
+	  <script type="text/javascript" src="js/shBrushXml.js"></script>
+	  <script type="text/javascript" src="js/shBrushJScript.js"></script>
+
+	  <!-- Optional FlexSlider Additions -->
+	  <script src="js/jquery.easing.js"></script>
+	  <script src="js/jquery.mousewheel.js"></script>
+	  <script defer src="js/demo.js"></script>
+
+	</body>
+</html>

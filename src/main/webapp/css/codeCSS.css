@@ -82,7 +82,7 @@ h1 {
 }
 
 #menu li :active {
-	color: #F0C300;
+	color: orange;
 }
 
 #menu li :hover {
@@ -149,7 +149,7 @@ h1 {
 
 .carouselRecettes {
 	position: relative;
-	right: -55px;
+	right: -20px;
 	top: 20px;
 	width: 900px;
 }
