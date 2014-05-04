@@ -52,22 +52,49 @@
 						<div class="flexslider">
 							<ul class="slides">
 								<li>
-									<img src="demo/images/kitchen_adventurer_cheesecake_brownie.jpg" width="400" height="300"/>
+									<img src="demo/images/la6.jpg" width="400" height="300"/>
 								</li>
 								<li>
-									<img src="demo/images/kitchen_adventurer_lemon.jpg" width="400" height="300"/>
+									<img src="demo/images/la5.jpg" width="400" height="300"/>
 								</li>
 								<li>
-									<img src="demo/images/kitchen_adventurer_donut.jpg" width="400" height="300"/>
+									<img src="demo/images/la0.jpg" width="400" height="300" />
 								</li>
 								<li>
-									<img src="demo/images/kitchen_adventurer_caramel.jpg" width="400" height="300" />
+									<img src="demo/images/la17.jpg" width="400" height="300"/>
 								</li>
 								<li>
-									<img src="demo/images/photo2.jpg" width="400" height="300"/>
+									<img src="demo/images/la21.jpg" width="400" height="300"/>
 								</li>
 								<li>
-									<img src="demo/images/photo6.jpg" width="400" height="300"/>
+									<img src="demo/images/la15.jpg" width="400" height="300"/>
+								</li>
+								<li>
+									<img src="demo/images/la14.jpg" width="400" height="300"/>
+								</li>
+								<li>
+									<img src="demo/images/la13.jpg" width="400" height="300"/>
+								</li>
+								<li>
+									<img src="demo/images/la11.jpg" width="400" height="300"/>
+								</li>
+								<li>
+									<img src="demo/images/la12.jpg" width="400" height="300"/>
+								</li>
+								<li>
+									<img src="demo/images/la10.jpg" width="400" height="300"/>
+								</li>
+								<li>
+									<img src="demo/images/la3.jpg" width="400" height="300"/>
+								</li>
+								<li>
+									<img src="demo/images/la4.jpg" width="400" height="300"/>
+								</li>
+								<li>
+									<img src="demo/images/la2.jpg" width="400" height="300"/>
+								</li>
+								<li>
+									<img src="demo/images/la43.jpg" width="400" height="300"/>
 								</li>
 							</ul>
 						</div>

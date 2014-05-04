@@ -52,7 +52,7 @@
 			</table>
 		</article>
 		<article>
-				<p> <br> <br> <br> </p>
+		<p> <br> <br> <br> </p>
 		</article>
 	</section>	
 	</div>
