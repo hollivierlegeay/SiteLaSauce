@@ -560,6 +560,7 @@ form input.sansLabel {
 
 .erreur {
 	color: #900;
+	text-align : right;
 }
 
 .succes {

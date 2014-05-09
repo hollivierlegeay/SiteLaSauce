@@ -28,9 +28,6 @@ public class AjoutRecetteServlet extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
-		// RequestDispatcher view = request
-		// .getRequestDispatcher("WEB-INF/pages/ajouterRecette.jsp");
-		// view.forward(request, response);
 
 		/* Affichage de la page */
 		this.getServletContext().getRequestDispatcher(VUE)
@@ -93,39 +90,35 @@ public class AjoutRecetteServlet extends HttpServlet {
 		/* Initialisation du résultat global de la validation. */
 		if (erreurs.isEmpty()) {
 
-			/*Ajout de la recette à la BDD*/
-			Integer idRecette = RecetteManager.getInstance().listerRecettes().size() + 1;
-			 RecetteManager.getInstance().ajouterRecette(
-			 new Recette(idRecette,
-			 request.getParameter("titrePlatRecette"),request.getParameter("imgRecette"),request.getParameter("difficulteRecette"),request.getParameter("typePlatRecette"),request.getParameter("ingredientsRecette"),request.getParameter("texteRecette")));
+			/* Ajout de la recette à la BDD */
+			Integer idRecette = RecetteManager.getInstance().listerRecettes()
+					.size() + 1;
+			RecetteManager.getInstance().ajouterRecette(
+					new Recette(idRecette, request
+							.getParameter("titrePlatRecette"), request
+							.getParameter("imgRecette"), request
+							.getParameter("difficulteRecette"), request
+							.getParameter("typePlatRecette"), request
+							.getParameter("ingredientsRecette"), request
+							.getParameter("texteRecette")));
 
-
-			 response.sendRedirect("listeRecettes");
+			response.sendRedirect("listeRecettes");
 		} else {
 			resultat = "Échec de la création.";
-			
+
 			/*
-			 * Stockage du résultat et des messages d'erreur dans l'objet request
+			 * Stockage du résultat et des messages d'erreur dans l'objet
+			 * request
 			 */
 			request.setAttribute(ATT_ERREURS, erreurs);
 			request.setAttribute(ATT_RESULTAT, resultat);
-			
+
 			/* Transmission de la paire d'objets request/response à notre JSP */
 			this.getServletContext().getRequestDispatcher(VUE)
 					.forward(request, response);
 
 		}
-//		/*
-//		 * Stockage du résultat et des messages d'erreur dans l'objet request
-//		 */
-//		request.setAttribute(ATT_ERREURS, erreurs);
-//		request.setAttribute(ATT_RESULTAT, resultat);
-		
-//		/* Transmission de la paire d'objets request/response à notre JSP */
-//		this.getServletContext().getRequestDispatcher(VUE)
-//				.forward(request, response);
-		
-		
+
 	}
 
 	private void validationTitre(String titrePlatRecette) throws Exception {
@@ -173,9 +166,4 @@ public class AjoutRecetteServlet extends HttpServlet {
 		}
 	}
 
-
-
 }
-
-
-

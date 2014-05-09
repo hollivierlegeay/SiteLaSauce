@@ -39,10 +39,10 @@ public class EvenementManager {
 					"Le evenement doit �tre renseign�.");
 		}
 		if (evenement.getIdEvenement() == null
-				|| evenement.getTitreEvenement().equals("")!=true
+				|| evenement.getTitreEvenement().equals("") == true
 				|| evenement.getDateEvenement() == null
-				|| evenement.getDetailEvenement().equals("")!=true
-				|| evenement.getLieuEvenement().equals("")!=true) {
+				|| evenement.getDetailEvenement().equals("") == true
+				|| evenement.getLieuEvenement().equals("") == true) {
 			throw new IllegalArgumentException(
 					"Un champ obligatoire du evenement n'est pas renseign�.");
 		}
@@ -53,13 +53,13 @@ public class EvenementManager {
 	public void supprimerEvenement(Integer idEvenement) {
 		evenementDao.supprimerEvenement(idEvenement);
 	}
-	
+
 	private Date creerDate(Integer jour, Integer mois, Integer annee) {
 		Calendar cal = GregorianCalendar.getInstance();
 		cal.set(Calendar.YEAR, annee);
 		cal.set(Calendar.MONTH, mois);
 		cal.set(Calendar.DATE, jour);
-		
+
 		return cal.getTime();
 	}
 

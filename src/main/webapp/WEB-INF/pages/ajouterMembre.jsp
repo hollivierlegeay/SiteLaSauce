@@ -19,27 +19,49 @@
 				<c:set var="pageSelectionnee" value="ajouterMembre" scope="request" />
 				<jsp:include page="menuM.jsp" />
 
+			<!-- Titre de la page -->
 			<h1 class=titreform>Création d'un Membre</h1>
+			
+			
 			<form method="post" action="ajouterMembre">
 				<fieldset>
 					<legend>Informations Membre</legend>
-
+					
+					<!-- Ajout du nom -->
 					<label for="nomMembre">Nom <span class="requis">*</span></label> <input
-						type="text" id="nomMembre" name="nomMembre" value="" size="40"
-						maxlength="50" /> <br /> <label for="prenomMembre">Prénom</label>
-					<input type="text" id="prenomMembre" name="prenomMembre" value=""
-						size="40" maxlength="50" /> <br /> <label for="mailHEIMembre">
+						type="text" id="nomMembre" name="nomMembre" value="<c:out value="${param.nomMembre}"/>" size="40"
+						maxlength="50" /> <br />
+						<span class="erreur">${erreurs['nomMembre']}</span> <br />
+						 
+					<!-- Ajout du prenom -->	
+					<label for="prenomMembre">Prénom <span
+						class="requis">*</span> </label>
+					<input type="text" id="prenomMembre" name="prenomMembre" value="<c:out value="${param.prenomMembre}"/>"
+						size="40" maxlength="50" /> <br /> <span class="erreur">${erreurs['prenomMembre']}</span><br /> 
+					
+					<!-- Ajout du mail -->	
+					<label for="mailHEIMembre">
 						Mail HEI <span class="requis">*</span>
 					</label> <input type="email" id="mailHEIMembre" name="mailHEIMembre"
-						value="" size="40" maxlength="100" /> <br /> <label
-						for="motdePasseMembre"> Mot de passe <span class="requis">*</span></label>
+						value="<c:out value="${param.mailHEIMembre}"/>" size="40" maxlength="100" />
+						 <br /><span class="erreur">${erreurs['mailHEIMembre']}</span> <br /> 
+					
+					<!-- Ajout du mot de passe -->
+					<label for="motdePasseMembre"> Mot de passe <span class="requis">*</span></label>
 					<input type="password" name="motdePasseMembre"
-						id="motdePasseMembre" value="" size="40" maxlength="20" /> <br />
+						id="motdePasseMembre" value="<c:out value="${param.motdePasseMembre}"/>" size="40" maxlength="20" />
+						 <br /><span class="erreur">${erreurs['motdePasseMembre']}</span> <br />
+					
+					<!-- Ajout du numéro de telephone -->
 					<label for="telephoneMembre"> Téléphone <span
 						class="requis">*</span></label> <input type="number"
-						name="telephoneMembre" id="telephoneMembre" value="" size="40"
-						maxlength="20" /> <br />
+						name="telephoneMembre" id="telephoneMembre" value="<c:out value="${param.telephoneMembre}"/>" size="40"
+						maxlength="20" />
+						 <br /><span class="erreur">${erreurs['telephoneMembre']}</span> <br />
+				
 				</fieldset>
+				
+				<!-- Bouton Valider-->
 				<div class="boutons">
 				<input type="submit" value="Valider" /> <input type="reset"
 					value="Remettre à zéro" /> <br />

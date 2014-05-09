@@ -20,6 +20,7 @@
 			<!-- Menu de navigation de l'espace membre -->
 			<c:set var="pageSelectionnee" value="ajouterRecette" scope="request" />
 			<jsp:include page="menuM.jsp" />
+			
 			<!-- Titre de la page -->
 			<h1 class=titreform>Création d'une recette</h1>
 
@@ -38,8 +39,7 @@
 					<label for="difficulteRecette">Difficulté <span
 						class="requis">*</span></label> <input
 						type="text" id="difficulteRecette" name="difficulteRecette"
-						value="<c:out 
-						value="${param.difficulteRecette}"/>"
+						value="<c:out value="${param.difficulteRecette}"/>"
 						size="20" maxlength="20" /> <span class="erreur">${erreurs['difficulteRecette']}</span>
 					<br />
 					
@@ -85,8 +85,8 @@
 				
 				<!-- Bouton pour valider-->
 				<div class="boutons">
-					<input type="submit" value="Valider" /> 
-					<!-- <input type="reset"value="Remettre à zéro" /> -->
+					<input style = "text-align : center;"type="submit" value="Valider" /> 
+					<input type="reset"value="Remettre à zéro" /> 
 				</div>
 				<br />
 

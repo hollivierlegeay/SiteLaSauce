@@ -58,6 +58,7 @@ public final class ConnexionForm {
 				&& !email.matches("([^.@]+)(\\.[^.@]+)*@([^.@]+\\.)+([^.@]+)")) {
 			throw new Exception("Merci de saisir une adresse mail valide.");
 		}
+		
 	}
 
 	/**

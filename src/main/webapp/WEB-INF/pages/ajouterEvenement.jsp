@@ -20,28 +20,47 @@
 			<c:set var="pageSelectionnee" value="ajouterEvenement"
 				scope="request" />
 			<jsp:include page="menuM.jsp" />
-
+			
+			<!-- Titre de la page -->
 			<h1 class=titreform>Création d'un évènement</h1>
+			
 			<form method="post" action="ajouterEvenement">
 				<fieldset>
 					<legend>Informations Evènement</legend>
-
+					
+					<!-- Ajout du titre -->
 					<label for="titreEvenement">Evènement <span class="requis">*</span></label>
 					<input type="text" id="titreEvenement" name="titreEvenement"
-						value="" size="20" maxlength="50" /> <br /> <label
-						for="dateEvenement">Date</label> <input type="date"
-						id="dateEvenement" name="dateEvenement" /> <br /> <label
-						for="detailEvenement">Description <span class="requis">*</span></label>
-					<textarea name="detailEvenement" id="detailEvenement" rows="5"
+						value="<c:out value="${param.titreEvenement}"/>" size="20" maxlength="50" /> <br />
+					<span class="erreur">${erreurs['titreEvenement']}</span><br /> 
+					
+					<!-- Ajout de la date -->
+					<label for="dateEvenement">Date</label> 
+					<input type="date"id="dateEvenement" name="dateEvenement" value="<c:out value="${param.dateEvenement}"/>"/> 
+					<br /><br /> 
+						
+					<!-- Ajout de la description -->
+					<label for="detailEvenement">Description <span class="requis">*</span></label>
+					<textarea name="detailEvenement" id="detailEvenement" value="<c:out value="${param.detailEvenement}"/>" rows="5"
 						cols="50">
-			</textarea>
-					<br /> <label for="lieuEvenement">Lieu <span
+					</textarea>
+					<br />
+					<span class="erreur">${erreurs['detailEvenement']}</span>
+					<br /> 
+					
+					<!-- Ajout du lieu -->
+					<label for="lieuEvenement">Lieu <span
 						class="requis">*</span></label> <input type="text" id="lieuEvenement"
-						name="lieuEvenement" value="" size="65" maxlength="100" /> <br />
+						name="lieuEvenement" value="<c:out value="${param.lieuEvenement}"/>" size="65" maxlength="100" />
+						<br />
+					<span class="erreur">${erreurs['lieuEvenement']}</span> <br />
+				
 				</fieldset>
+				
+				<!-- Bouton Valider -->
 				<div class="boutons">
-					<input type="submit" value="Valider" /> <input type="reset"
-						value="Remettre à zéro" />
+					<input type="submit" value="Valider" /> 
+					<input type="reset" value="Remettre à zéro" />
 				</div>
 				<br />
 			</form>

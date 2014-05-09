@@ -62,9 +62,7 @@ public class ConnexionServlet extends HttpServlet {
 			{			
 					session.setAttribute(ATT_SESSION_USER, utilisateur );
 					//Connexion avec succès à l'espace membre
-					
-					
-				
+
 			} 
 			else {
 				session.setAttribute(ATT_SESSION_USER, null );
@@ -76,7 +74,8 @@ public class ConnexionServlet extends HttpServlet {
 		*/
 		request.setAttribute( ATT_FORM, form );
 		request.setAttribute( ATT_USER, utilisateur );
-		/* Redirection vers l'index de l'espace Membre²*/
+		
+		/* Redirection vers l'index de l'espace Membre*/
 		this.getServletContext().getRequestDispatcher( VUE
 		).forward( request, response );
 		
@@ -86,4 +85,3 @@ public class ConnexionServlet extends HttpServlet {
 						
 	}
 }
-			
