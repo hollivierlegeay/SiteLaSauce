@@ -30,6 +30,8 @@
 <h1> Les Recettes</h1>
 		<section>
 		<article>
+			
+		<!-- 	Tableau qui affiche la liste des recettes du site -->
 			<table>
 			<tr>
 				<th>Titre</th>
@@ -52,7 +54,7 @@
 			</table>
 		</article>
 		<article>
-		<p> <br> <br> <br> </p>
+		<p> <br> <a href="listeRecettes"><input class = "acces" type="button" id="button-membre" value="Retour haut de la page" /></a><br> <br> </p>
 		</article>
 	</section>	
 	</div>

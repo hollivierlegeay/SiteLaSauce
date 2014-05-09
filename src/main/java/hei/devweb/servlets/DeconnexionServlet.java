@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 public class DeconnexionServlet extends HttpServlet {
-	public static final String URL_REDIRECTION = "/laSauce";
+	public static final String URL_REDIRECTION = "connexion";
 
 	public void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {

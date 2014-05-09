@@ -16,6 +16,7 @@ import javax.servlet.http.HttpSession;
 
 public class ConnexionServlet extends HttpServlet {
 	public static final String VUE = "/WEB-INF/pages/connexion.jsp";
+	public static final String VUE2 = "/WEB-INF/pages/indexM.jsp";
 	public static final String ATT_USER = "utilisateur";
 	public static final String ATT_FORM = "form";
 	public static final String ATT_SESSION_USER =
@@ -50,7 +51,7 @@ public class ConnexionServlet extends HttpServlet {
 		* Utilisateur à la session, sinon suppression du bean de la
 		session.
 		*/
-		System.out.println("Avant les 2 if : OK");
+	
 		List<Membre> membres = MembreManager.getInstance().listerMembres();
 		for (int i = 0; i < membres.size(); i++) 
 		{
@@ -58,15 +59,16 @@ public class ConnexionServlet extends HttpServlet {
 					&& mdp.equals(membres.get(i).getMotdePasse())
 					&& login.endsWith("@hei.fr")
 					&&form.getErreurs().isEmpty())
-			{	System.out.println("1er IF = OK");
-				
+			{			
 					session.setAttribute(ATT_SESSION_USER, utilisateur );
-					System.out.println("2eme IF = OK donc Connexion avec succès");
+					//Connexion avec succès à l'espace membre
+					
+					
 				
 			} 
 			else {
 				session.setAttribute(ATT_SESSION_USER, null );
-				System.out.println("Echec");
+				//Echec de la connexion à l'espace membre
 				}
 		}
 		
@@ -74,21 +76,14 @@ public class ConnexionServlet extends HttpServlet {
 		*/
 		request.setAttribute( ATT_FORM, form );
 		request.setAttribute( ATT_USER, utilisateur );
+		/* Redirection vers l'index de l'espace Membre²*/
 		this.getServletContext().getRequestDispatcher( VUE
 		).forward( request, response );
 		
 		/* Vérification des champs email et mot de passe avec la base de données */
 		
-//				session.setAttribute("mailHEI", membres.get(i).getMailHEI()); // Succès de la connexion à l'espace Membre
-		
-				/* Redirection vers le menu de l'espace Membre */
-//				response.sendRedirect("indexM");
-//			} else 
-//			{
-//				request.getRequestDispatcher("connexion");
-//				session.setAttribute("mailHEI", null); // Echec de connexion à
-//														// l'espace Membre	
-					
+
+						
 	}
 }
 			

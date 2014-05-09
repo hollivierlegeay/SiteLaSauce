@@ -36,13 +36,14 @@ public class RecetteManager {
 					"La recette doit être renseignée.");
 		}
 		if (recette.getIdRecette() == null
-				|| recette.getTitrePlat() == null
-				|| recette.getDifficulte() == null
-				|| recette.getTypePlat() == null
-				|| recette.getIngredients() == null
-				|| recette.getTexteRecette() == null) {
+				|| recette.getTitrePlat().equals("")==true  ){
+//				|| recette.getImgRecette().equals("")!=true
+//				|| recette.getDifficulte().equals("")!=true
+//				|| recette.getTypePlat().equals("")!=true
+//				|| recette.getIngredients().equals("")!=true
+//				|| recette.getTexteRecette().equals("")!=true) {
 			throw new IllegalArgumentException(
-					"Un champ obligatoire du recette n'est pas renseign�.");
+					"Un champ obligatoire du recette n'est pas renseigné.");
 		}
 
 		recetteDao.ajouterRecette(recette);

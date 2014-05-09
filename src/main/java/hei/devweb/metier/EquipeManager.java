@@ -34,8 +34,8 @@ public class EquipeManager {
 			throw new IllegalArgumentException("L'équipe doit être renseignée.");
 		}
 		if (equipe.getIdEquipe() == null 
-				|| equipe.getAnneeMandat() == null
-				|| equipe.getDescriptionEquipe() == null) {
+				|| equipe.getAnneeMandat().equals("")!=true
+				) {
 			throw new IllegalArgumentException(
 					"Un champ obligatoire de l'équipe n'est pas renseigné.");
 		}

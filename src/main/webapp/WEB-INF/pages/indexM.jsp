@@ -63,6 +63,8 @@ Il en va de même pour les évènements, les équipes lors d'une passation et en
  
               <p style="text-align:center;" ><a class="retour"  class="${pageSelectionnee == 'index' ? 'active' : ''}"href="index"> 
               			Retour au site</a></p>
+      		 <p style="text-align:center;"> <a class="deconnexion" href="deconnexion"> 
+              			Se déconnecter</a></p>	
         <br>
         <br>
         <br>

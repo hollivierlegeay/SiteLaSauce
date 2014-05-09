@@ -16,9 +16,6 @@ public class SuppressionRecetteServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
 		Integer idRecette = Integer.parseInt(request.getParameter("idRecette"));
-		System.out
-				.println("Dans controlleur 'SupprimerChapitre' avec idRecette="
-						+ idRecette);
 		RecetteManager.getInstance().supprimerRecette(idRecette);
 		response.sendRedirect("listeRecettes");
 	}

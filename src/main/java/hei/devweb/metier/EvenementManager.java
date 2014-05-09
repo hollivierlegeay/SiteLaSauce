@@ -28,7 +28,7 @@ public class EvenementManager {
 	public Evenement getEvenement(Integer id) {
 		if (id == null) {
 			throw new IllegalArgumentException(
-					"L'identifiant du evenement doit etre renseigné.");
+					"L'identifiant du evenement doit etre renseignï¿½.");
 		}
 		return evenementDao.getEvenement(id);
 	}
@@ -36,15 +36,15 @@ public class EvenementManager {
 	public void ajouterEvenement(Evenement evenement) {
 		if (evenement == null) {
 			throw new IllegalArgumentException(
-					"Le evenement doit être renseigné.");
+					"Le evenement doit ï¿½tre renseignï¿½.");
 		}
 		if (evenement.getIdEvenement() == null
-				|| evenement.getTitreEvenement() == null
+				|| evenement.getTitreEvenement().equals("")!=true
 				|| evenement.getDateEvenement() == null
-				|| evenement.getDetailEvenement() == null
-				|| evenement.getLieuEvenement() == null) {
+				|| evenement.getDetailEvenement().equals("")!=true
+				|| evenement.getLieuEvenement().equals("")!=true) {
 			throw new IllegalArgumentException(
-					"Un champ obligatoire du evenement n'est pas renseigné.");
+					"Un champ obligatoire du evenement n'est pas renseignï¿½.");
 		}
 
 		evenementDao.ajouterEvenement(evenement);

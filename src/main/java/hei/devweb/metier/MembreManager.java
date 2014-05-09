@@ -33,10 +33,10 @@ public class MembreManager {
 		if (membre == null) {
 			throw new IllegalArgumentException("Le membre doit être renseignée.");
 		}
-		if (membre.getIdMembre() == null || membre.getNom() == null
-				|| membre.getPrenom() == null|| membre.getMotdePasse() == null
-				|| membre.getMailHEI() == null
-				||  membre.getTelephone() == null) {
+		if (membre.getIdMembre() == null || membre.getNom().equals("")!=true
+				|| membre.getPrenom().equals("")!=true|| membre.getMotdePasse().equals("")!=true
+				|| membre.getMailHEI().equals("")!=true
+				||  membre.getTelephone().equals("")!=true) {
 			throw new IllegalArgumentException(
 					"Un champ obligatoire du membre n'est pas renseigné.");
 		}

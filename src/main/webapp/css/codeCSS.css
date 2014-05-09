@@ -486,6 +486,27 @@ p.texteR {
 	-webkit-transform: scale(1.1);
 }
 
+.deconnexion {
+	text-align:center;
+	font-size: 1.5em;
+	color: rgb(74, 121, 127);
+	font-family: Script MT Bold;
+	display: inline-block;
+	font-weight: bold;
+	margin: 6px 20px 5px 20px; 
+	border-radius: 10px; 
+	box-shadow : 0 0 15px 2px;
+	-webkit-transition-property: transform;
+	-webkit-transition-duration: 0.2s;
+}
+
+.deconnexion:active {
+	color: rgb(74, 121, 127);
+}
+
+.deconnexion:hover {
+	-webkit-transform: scale(1.1);
+}
 /* ****************Formulaires ******************** */
 .titreform {
 	text-align: center;
