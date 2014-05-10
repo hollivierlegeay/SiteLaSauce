@@ -16,9 +16,6 @@ public class SuppressionMembreServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
 		Integer idMembre = Integer.parseInt(request.getParameter("idMembre"));
-		System.out
-				.println("Dans controlleur 'SupprimerMembre' avec idMembre="
-						+ idMembre);
 		MembreManager.getInstance().supprimerMembre(idMembre);
 		response.sendRedirect("listeMembres");
 	}

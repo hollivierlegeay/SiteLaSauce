@@ -16,9 +16,6 @@ public class SuppressionEquipeServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
 		Integer idEquipe = Integer.parseInt(request.getParameter("idEquipe"));
-		System.out
-				.println("Dans controlleur 'SupprimerEquipe' avec idEquipe="
-						+ idEquipe);
 		EquipeManager.getInstance().supprimerEquipe(idEquipe);
 		response.sendRedirect("listeEquipes");
 	}

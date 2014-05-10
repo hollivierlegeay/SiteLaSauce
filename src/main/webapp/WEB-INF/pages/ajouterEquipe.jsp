@@ -24,19 +24,28 @@
 				<fieldset>
 					<legend>Informations Equipe</legend>
 
+					<!-- Ajout de l'année du mandat-->
 					<label for="anneeMandatEquipe">Année du mandat <span class="requis">*</span></label>
 					<input type="text" id="anneeMandatEquipe" name="anneeMandatEquipe"
-						value="" size="20" maxlength="20" /> <br /> 
-					<label for="imgEquipe">Photo de l'équipe</label> <input type="text" placeholder="URL de l'image - clic droit sur l'image pour l'obtenir"
-						id="imgEquipe" name="imgEquipe" value="" size="65"
-						maxlength="500" /> <br /> 
-					<label
-						for="descriptionEquipe">Description <span class="requis">*</span></label>
-					<textarea name="descriptionEquipe" id="descriptionEquipe"
-						rows="5" cols="50">
+						value="<c:out value="${param.anneeMandatEquipe}"/>" size="20" maxlength="20" /><br />
+						<span class="erreur">${erreurs['anneeMandatEquipe']}</span> <br /> 
+					
+					<!-- Ajout d'une image -->
+					<label for="imgEquipe">Photo de l'équipe  <span class="requis">*</span></label> <input type="text" placeholder="URL de l'image - clic droit sur l'image pour l'obtenir"
+						id="imgEquipe" name="imgEquipe" value="<c:out value="${param.imgEquipe}"/>" size="65"
+						maxlength="500" /><br />
+						<span class="erreur">${erreurs['imgEquipe']}</span> <br /> 
+					
+					<!-- Ajout d'une description de l'équipe -->
+					<label for="descriptionEquipe">Description</label>
+					<textarea name="descriptionEquipe" id="descriptionEquipe" 
+						rows="5" cols="50" >
 				</textarea>
 					<br />
+				
 				</fieldset>
+				
+				<!-- Boutons pour valider ou remettr à zéro le formulaire d'ajout -->
 				<div class="boutons">
 				<input type="submit" value="Valider" /> <input type="reset"
 					value="Remettre à zéro" /> <br />

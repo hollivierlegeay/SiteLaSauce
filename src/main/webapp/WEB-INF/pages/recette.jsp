@@ -27,29 +27,26 @@
 
 			<a href="listeRecettesPublic"><input  class ="fleche" type="image" src="Images/fleche-isn.gif" /></a>
 
-		<br />
+	
 		<section>
-		<article>	
+	
 		<h1 class = "titreR">${recette.titrePlat}</h1>
 		 
-		 <br /> <img class="imageR" src="${recette.imgRecette}"
+		 <aside>
+		<img class="imageR" src="${recette.imgRecette}"
 					alt="Photo Recette" /> 
+		</aside>			
 				
-				<div>
+				<article class=articleRecette>
 					
-					<h3>Difficulté : </h3><br /><p class="texteR"> ${recette.difficulte}</p>
-				</div>
-				<div>
+					<h3>Difficulté : </h3><br>  <p class="texteR"> ${recette.difficulte}</p><br>
 					
-					<h3>Type de plat : </h3><br /><p class="texteR"> ${recette.typePlat}</p>
-				</div>
-				<div>
+					<h3>Type de plat :   </h3><br>  <p class="texteR"> ${recette.typePlat}</p><br>
+			
+					<h3>Ingrédients : </h3><p class="texteR">${recette.ingredients}</p><br>
+			
+					<h3>Préparation : </h3><p class="texteR">${recette.texteRecette}</p><br>
 				
-					<h3>Ingrédients : </h3><p class="texteR">${recette.ingredients}</p>
-				</div>
-				<div>
-					<h3>Préparation : </h3><p class="texteR">${recette.texteRecette}</p>
-				</div>
 				
 				<div><br />
 				<a href="javascript:window.print()"><input class = "retour" type="button" id="button-imprimer" value="Imprimer la Recette" /></a> 

@@ -200,11 +200,11 @@ h1 {
 }
 
 .imageR {
-	width: 400px;
-	height: 350px;
+	width: 350px;
+	height: 250px;
 	border-radius: 20px;
 	box-shadow: 0 0 15px 2px;
-	margin: 15px 20px 1px;
+	margin: 30px 20px 1px 300px ;
 	display: inline-block;
 }
 
@@ -233,8 +233,13 @@ article {
 	height: auto;
 	margin-right: 30px;
 	padding-left: 30px;
-	text-align: center;
-	display: inline-block;
+/* 	text-align: center; */
+	display: inline-block;}
+	
+article.articleRecette {
+
+	margin: -300px 20px 50px 2px;
+	
 }
 
 h3 {
@@ -247,14 +252,15 @@ h3 {
 }
 
 h1.titreR {
-	text-align: center;
+/* 	text-align: center; */
 	text-decoration: underline;
 	color: rgb(254, 160, 33);
 	font-family: Script MT Bold;
-	display: inline-block;
+	display: inline-block; 
 	font-weight: bold;
-	margin: -20px 20px 15px 50px;
+ 	margin: -50px 20px 15px 280px; 
 	font-size: 2.5em;
+	
 }
 
 p.texteR {

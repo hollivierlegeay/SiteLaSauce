@@ -16,9 +16,6 @@ public class SuppressionEvenementServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
 		Integer idEvenement = Integer.parseInt(request.getParameter("idEvenement"));
-		System.out
-				.println("Dans controlleur 'SupprimerEvenement' avec idEvenement="
-						+ idEvenement);
 		EvenementManager.getInstance().supprimerEvenement(idEvenement);
 		response.sendRedirect("listeEvenements");
 	}

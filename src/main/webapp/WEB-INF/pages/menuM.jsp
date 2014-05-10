@@ -29,7 +29,7 @@
 				href="ajouterEvenement"> Création évènement</a></li>
 			<li><a
 				class="${pageSelectionnee == 'listeEvenements' ? 'active' : ''}"
-				href="listeEvenements"> Listes évènements</a></li>
+				href="listeEvenements"> Liste évènements</a></li>
 		</ul></li>
 
 	<li><a
@@ -41,7 +41,7 @@
 				href="ajouterEquipe"> Création équipe</a></li>
 			<li><a
 				class="${pageSelectionnee == 'listeEquipes' ? 'active' : ''}"
-				href="listeEquipes"> Listes équipes</a></li>
+				href="listeEquipes"> Liste équipes</a></li>
 		</ul></li>
 	<li><a
 		class="${pageSelectionnee == 'listeMembres' ? 'active' : ''}"

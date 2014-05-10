@@ -41,7 +41,7 @@
 			<div id="encadreBienvenue">
 			<h3 id="titreBienvenue">Bienvenue <br> sur le site de LaSauce, l'association de cuisine d'Hei</h3>
 			<p id="texteBienvenue">Depuis 3 ans, LaSauce redonne aux Heiens le plaisir de bien manger !
-					LaSauce d'HEI est une association qui a été crée dans le but de rassembler les élèves de l'école autour du plaisir de la cuisine !
+					LaSauce d'HEI est une association qui a été créée dans le but de rassembler les élèves de l'école autour du plaisir de la cuisine !
 			</div>
 		</div>
 
