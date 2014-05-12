@@ -1,7 +1,6 @@
 package hei.devweb.dao;
 
 import hei.devweb.model.Membre;
-
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -9,9 +8,18 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
-
+/**
+ * MembreDao est la classe qui gère les intéractions du site avec la table "membre" de la base de données sitelasauce.
+ *
+ */
 public class MembreDao {
-
+	   /**
+* Retourne la liste des membres de la table "membre".
+* 
+* @return La liste des membres.
+* 
+* @see Membre
+*/
 	public List<Membre> listerMembres() {
 		List<Membre> listeMembres = new ArrayList<Membre>();
 		try {
@@ -42,7 +50,13 @@ public class MembreDao {
 
 		return listeMembres;
 	}
-
+	/**
+     * Met à jour la table "membre".
+     * 
+     * @param membre 
+     *            Le nouveau membre ajouté.
+     * 
+     */
 	public void ajouterMembre(Membre Membre) {
 		try {
 			Connection connection = DataSourceProvider.getDataSource()
@@ -66,6 +80,13 @@ public class MembreDao {
 			e.printStackTrace();
 		}
 	}
+	/**
+     * Met à jour la table "membre".
+     * 
+     * @param idMembre 
+     *            L'id du membre qui sera supprimé.
+     * 
+     */
 	public void supprimerMembre(Integer idMembre) {
 		try {
 			Connection connection = DataSourceProvider.getDataSource()
@@ -85,7 +106,13 @@ public class MembreDao {
 			e.printStackTrace();
 		}
 	}
-	
+	/**
+     * Retourne l'objet Membre.
+     * @param idMembre
+     * 			Id du membre qui sera retourné.
+     * 
+     * @return L'objet Membre d'identifiant idMembre. 
+     */	
 	public Membre getMembre(Integer idMembre) {
 		Membre Membre = null;
 		try {

@@ -9,8 +9,18 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
-
+/**
+ * EquipeDao est la classe qui gère les intéractions avec la table "equipe" de la base de données sitelasauce.
+ *
+ */
 public class EquipeDao {
+	   /**
+     * Retourne la liste des équipes de la table "equipe".
+     * 
+     * @return La liste des équipes.
+     * 
+     * @see Equipe
+     */
 
 	public List<Equipe> listerEquipes() {
 		List<Equipe> listeEquipes = new ArrayList<Equipe>();
@@ -40,7 +50,13 @@ public class EquipeDao {
 
 		return listeEquipes;
 	}
-
+	/**
+     * Met à jour la table "equipe".
+     * 
+     * @param equipe 
+     *            La nouvelle équipe ajoutée.
+     * 
+     */
 	public void ajouterEquipe(Equipe Equipe) {
 		try {
 			Connection connection = DataSourceProvider.getDataSource()
@@ -62,6 +78,13 @@ public class EquipeDao {
 			e.printStackTrace();
 		}
 	}
+	/**
+     * Met à jour la table "equipe".
+     * 
+     * @param idEquipe 
+     *            L'id de l'équipe qui sera supprimée.
+     * 
+     */
 	public void supprimerEquipe(Integer idEquipe) {
 		try {
 			Connection connection = DataSourceProvider.getDataSource()
@@ -81,7 +104,13 @@ public class EquipeDao {
 			e.printStackTrace();
 		}
 	}
-
+	/**
+     * Retourne l'objet Equipe.
+     * @param idEquipe
+     * 			Id de l'équipe qui sera retournée.
+     * 
+     * @return L'objet Equipe d'identifiant idEquipe. 
+     */
 	public Equipe getEquipe(Integer idEquipe) {
 		Equipe Equipe = null;
 		try {

@@ -7,12 +7,16 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
-import javax.servlet.RequestDispatcher;
+
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
+/**
+ * AjoutMembreServlet est la classe qui permet d'afficher le formulaire de création d'un membre ("ajouterMembre.jsp").
+ * 
+ * @see HttpServlet
+ */
 public class AjoutMembreServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	public static final String VUE = "/WEB-INF/pages/ajouterMembre.jsp";
@@ -23,8 +27,12 @@ public class AjoutMembreServlet extends HttpServlet {
 	public static final String CHAMP5 = "telephoneMembre";
 	public static final String ATT_ERREURS = "erreurs";
 	public static final String ATT_RESULTAT = "resultat";
-
-
+	/**
+	 * Pour gérer la méthode GET
+	 * 
+	 * @param HttpServletRequest
+	 * @param HttpServletResponse
+	 */
 	@Override
 	protected void doGet(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
@@ -33,7 +41,12 @@ public class AjoutMembreServlet extends HttpServlet {
 		this.getServletContext().getRequestDispatcher(VUE)
 				.forward(request, response);
 	}
-
+	/**
+	 * Pour gérer la méthode POST
+	 * 
+	 * @param HttpServletRequest
+	 * @param HttpServletResponse
+	 */
 	@Override
 	protected void doPost(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
@@ -104,7 +117,11 @@ public class AjoutMembreServlet extends HttpServlet {
 		}
 
 	}
-
+	/**
+	 * Méthode qui valide la saisie du nom dans le formulaire d'ajout.
+	 * 
+	 * @param nomMembre
+	 */
 	private void validationNom(String nomMembre) throws Exception {
 		if (nomMembre != null && nomMembre.trim().length() < 3) {
 			throw new Exception(
@@ -112,7 +129,11 @@ public class AjoutMembreServlet extends HttpServlet {
 		}
 
 	}
-
+	/**
+	 * Méthode qui valide la saisie du prenom dans le formulaire d'ajout.
+	 * 
+	 * @param prenomMembre
+	 */
 	private void validationPrenom(String prenomMembre)
 			throws Exception {
 		if (prenomMembre != null && prenomMembre.trim().length() < 3) {
@@ -120,21 +141,33 @@ public class AjoutMembreServlet extends HttpServlet {
 					"Le prénom doit contenir au moins 3 caractères.");
 		}
 	}
-
+	/**
+	 * Méthode qui valide la saisie du maqil dans le formulaire d'ajout.
+	 * 
+	 * @param mailHEIMembre
+	 */
 	private void validationMail(String mailHEIMembre) throws Exception {
 		if (mailHEIMembre != null && mailHEIMembre.trim().length() < 3) {
 			throw new Exception(
 					"Le mail HEI doit contenir au moins 3 caractères.");
 		}
 	}
-
+	/**
+	 * Méthode qui valide la saisie du mot de passe dans le formulaire d'ajout.
+	 * 
+	 * @param motdePasseMembre
+	 */
 	private void validationMdp(String motdePasseMembre) throws Exception {
 		if (motdePasseMembre != null && motdePasseMembre.trim().length() < 6) {
 			throw new Exception(
 					"Le mot de passe doit contenir au moins 6 caractères.");
 		}
 	}
-
+	/**
+	 * Méthode qui valide la saisie du téléphone dans le formulaire d'ajout.
+	 * 
+	 * @param telephoneMembre
+	 */
 	private void validationTel(String telephoneMembre)
 			throws Exception {
 		if (telephoneMembre != null

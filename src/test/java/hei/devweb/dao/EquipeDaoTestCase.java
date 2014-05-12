@@ -10,11 +10,29 @@ import java.util.List;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
+/**
+ * <b>EquipeDaoTestCase est la classe qui teste les méthodes de la classe EquipeDao</b>
+ * <p>Rappel : 
+ * Une équipe est caractérisée par les informations suivantes :
+ * <ul>
+ * <li>Un identifiant qui est généré automatiquement par la base de données.</li>
+ * <li>Une année de mandat. ex : 2013/2014</li>
+ * <li>Une description de l'équipe.</li>
+ * <li>Une image de l'équipe.</li>
+ * </ul>
+ * </p>
+ * 
+ * @see EquipeDao
+ * 
+ */
 
 public class EquipeDaoTestCase {
 
 	private EquipeDao equipeDao = new EquipeDao();
-
+	/**
+	 * Méthode qui vide le contenu de la base de données
+	 * 
+	 */
 	@Before
 	public void purgeBDD() throws Exception {
 		Connection connection = DataSourceProvider.getDataSource()
@@ -26,7 +44,12 @@ public class EquipeDaoTestCase {
 		stmt.close();
 		connection.close();
 	}
-
+	/**
+	 * Méthode qui teste la méthode "listerEquipe" de la classe EquipeDao.
+	 * 
+	 * @see EquipeDao#listerEquipes()
+	 * 
+	 */
 	@Test
 	public void testListerEquipes() {
 		List<Equipe> equipes = equipeDao.listerEquipes();
@@ -37,7 +60,12 @@ public class EquipeDaoTestCase {
 		Assert.assertEquals("https://fbcdn-sphotos-f-a.akamaihd.net/hphotos-ak-ash3/t31.0-8/885329_485465288229344_557185732_o.jpg",equipes.get(0).getImgEquipe());
 	
 	}
-
+	/**
+	 * Méthode qui teste la méthode "ajouterEquipe" de la classe EquipeDao.
+	 * 
+	 * @see EquipeDao#ajouterEquipe(Equipe)
+	 * 
+	 */
 	@Test
 	public void testAjouterEquipe() throws Exception {
 
@@ -55,7 +83,12 @@ public class EquipeDaoTestCase {
 		Assert.assertEquals("https://fbcdn-sphotos-f-a.akamaihd.net/hphotos-ak-ash3/t31.0-8/885329_485465288229344_557185732_o.jpg",results.getString("imgEquipe"));
 		
 	}
-
+	/**
+	 * Méthode qui teste la méthode "getEquipe" de la classe EquipeDao.
+	 * 
+	 * @see EquipeDao#getEquipe(Integer)
+	 * 
+	 */
 	@Test
 	public void testgetEquipe() {
 		Equipe equipe = equipeDao.getEquipe(1);

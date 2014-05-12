@@ -7,12 +7,16 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
-import javax.servlet.RequestDispatcher;
+
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
+/**
+ * AjoutRecetteServlet est la classe qui permet d'afficher le formulaire de création d'une recette ("ajouterRecette.jsp").
+ * 
+ * @see HttpServlet
+ */
 public class AjoutRecetteServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	public static final String VUE = "/WEB-INF/pages/ajouterRecette.jsp";
@@ -24,7 +28,12 @@ public class AjoutRecetteServlet extends HttpServlet {
 	public static final String CHAMP6 = "texteRecette";
 	public static final String ATT_ERREURS = "erreurs";
 	public static final String ATT_RESULTAT = "resultat";
-
+	/**
+	 * Pour gérer la méthode GET
+	 * 
+	 * @param HttpServletRequest
+	 * @param HttpServletResponse
+	 */
 	@Override
 	protected void doGet(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
@@ -33,7 +42,12 @@ public class AjoutRecetteServlet extends HttpServlet {
 		this.getServletContext().getRequestDispatcher(VUE)
 				.forward(request, response);
 	}
-
+	/**
+	 * Pour gérer la méthode POST
+	 * 
+	 * @param HttpServletRequest
+	 * @param HttpServletResponse
+	 */
 	@Override
 	protected void doPost(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
@@ -120,7 +134,11 @@ public class AjoutRecetteServlet extends HttpServlet {
 		}
 
 	}
-
+	/**
+	 * Méthode qui valide la saisie du titre dans le formulaire d'ajout.
+	 * 
+	 * @param titrePlatRecette
+	 */
 	private void validationTitre(String titrePlatRecette) throws Exception {
 		if (titrePlatRecette != null && titrePlatRecette.trim().length() < 3) {
 			throw new Exception(
@@ -128,7 +146,11 @@ public class AjoutRecetteServlet extends HttpServlet {
 		}
 
 	}
-
+	/**
+	 * Méthode qui valide la saisie de la difficulté dans le formulaire d'ajout.
+	 * 
+	 * @param difficulteRecette
+	 */
 	private void validationDifficulte(String difficulteRecette)
 			throws Exception {
 		if (difficulteRecette != null && difficulteRecette.trim().length() < 3) {
@@ -136,21 +158,33 @@ public class AjoutRecetteServlet extends HttpServlet {
 					"La difficulté doit contenir au moins 3 caractères.");
 		}
 	}
-
+	/**
+	 * Méthode qui valide la saisie du type de plat dans le formulaire d'ajout.
+	 * 
+	 * @param typePlatRecette
+	 */
 	private void validationType(String typePlatRecette) throws Exception {
 		if (typePlatRecette != null && typePlatRecette.trim().length() < 3) {
 			throw new Exception(
 					"Le type de la recette doit contenir au moins 3 caractères.");
 		}
 	}
-
+	/**
+	 * Méthode qui valide la saisie de l'URL de l'image dans le formulaire d'ajout.
+	 * 
+	 * @param imgRecette
+	 */
 	private void validationImg(String imgRecette) throws Exception {
 		if (imgRecette != null && imgRecette.trim().length() < 3) {
 			throw new Exception(
 					"L'URL de l'image doit contenir au moins 3 caractères.");
 		}
 	}
-
+	/**
+	 * Méthode qui valide la saisie des ingrédients dans le formulaire d'ajout.
+	 * 
+	 * @param ingredientsRecette
+	 */
 	private void validationIngredients(String ingredientsRecette)
 			throws Exception {
 		if (ingredientsRecette != null
@@ -159,7 +193,11 @@ public class AjoutRecetteServlet extends HttpServlet {
 					"La liste des ingrédients doit contenir au moins 3 caractères.");
 		}
 	}
-
+	/**
+	 * Méthode qui valide la saisie du texte dans le formulaire d'ajout.
+	 * 
+	 * @param texteRecette
+	 */
 	private void validationTexte(String texteRecette) throws Exception {
 		if (texteRecette != null && texteRecette.trim().length() < 3) {
 			throw new Exception("Le texte doit contenir au moins 3 caractères.");

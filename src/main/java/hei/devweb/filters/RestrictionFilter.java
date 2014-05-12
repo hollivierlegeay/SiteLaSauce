@@ -11,14 +11,30 @@ import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-
+/**
+ * RestrictionFilter est la classe qui permet de restreindre l'accès à l'espace Membres.
+ *
+ */
 public class RestrictionFilter implements Filter {
 	public static final String ACCES_PUBLIC = "/connexion";
 	public static final String ATT_SESSION_USER = "sessionUtilisateur";
-
+	/**
+	 * Méthode appelée par le conteneur, elle permet d'ajouter des paramètres à l'initialisation du filtre.
+	 *
+	 * @param FilterConfig 
+	 * 			Paramètre d'initialisation du filtre
+	 *
+	 */
 	public void init(FilterConfig config) throws ServletException {
 	}
-
+	/**
+	 * Méthode unique du filtre, donne les consignes à suivre.
+	 *
+	 * @param FilterChain 
+	 * 			Paramètre du filtre.
+	 * @see FilterChain
+	 *
+	 */
 	public void doFilter(ServletRequest req, ServletResponse res,
 			FilterChain chain) throws IOException, ServletException {
 		/* Cast des objets request et response */
@@ -38,7 +54,10 @@ public class RestrictionFilter implements Filter {
 			chain.doFilter(request, response);
 		}
 	}
-
+	/**
+	 * Méthode liée au cycle de vie du filtre
+	 * 
+	 */
 	public void destroy() {
 	}
 }

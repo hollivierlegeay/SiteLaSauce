@@ -2,6 +2,7 @@ package hei.devweb.dao;
 
 import hei.devweb.model.Recette;
 
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -9,9 +10,18 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
-
+/**
+ * RecetteDao est la classe qui gère les intéractions du site avec la table "recette" de la base de données sitelasauce.
+ *
+ */
 public class RecetteDao {
-
+	   /**
+  * Retourne la liste des recettes de la table "recette".
+  * 
+  * @return La liste des recettes.
+  * 
+  * @see Recette
+  */
 	public List<Recette> listerRecettes() {
 		List<Recette> listeRecettes = new ArrayList<Recette>();
 		try {
@@ -43,7 +53,13 @@ public class RecetteDao {
 
 		return listeRecettes;
 	}
-
+	/**
+     * Met à jour la table "recette".
+     * 
+     * @param recette 
+     *            La nouvelle recette ajoutée.
+     * 
+     */
 	public void ajouterRecette(Recette Recette) {
 		try {
 			Connection connection = DataSourceProvider.getDataSource()
@@ -68,7 +84,13 @@ public class RecetteDao {
 			e.printStackTrace();
 		}
 	}
-
+	/**
+     * Met à jour la table "recette".
+     * 
+     * @param idRecette 
+     *            L'id de la recette qui sera supprimée.
+     * 
+     */
 	public void supprimerRecette(Integer idRecette) {
 		try {
 			Connection connection = DataSourceProvider.getDataSource()
@@ -89,6 +111,13 @@ public class RecetteDao {
 		}
 	}
 
+	/**
+     * Retourne l'objet Recette.
+     * @param idRecette
+     * 			Id de la recette qui sera retournée.
+     * 
+     * @return L'objet Recette d'identifiant idRecette. 
+     */
 	public Recette getRecette(Integer idRecette) {
 		Recette Recette = null;
 		try {

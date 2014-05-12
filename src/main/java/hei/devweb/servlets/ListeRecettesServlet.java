@@ -12,10 +12,19 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-
+/**
+ * ListeRecettesServlet est la classe qui permet d'afficher dans l'espace "Membres" la liste des recettes via la page JSP suivante :"listeRecettes.jsp".
+ * 
+ * @see HttpServlet
+ */
 public class ListeRecettesServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
+	/**
+	 * Pour gérer la méthode GET
+	 * 
+	 * @param HttpServletRequest
+	 * @param HttpServletResponse
+	 */
 	@Override
 	protected void doGet(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {

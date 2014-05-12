@@ -13,22 +13,37 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-
+/**
+ * ConnexionServlet est la classe qui permet d'afficher la page de connexion à l'espace "Membres" ("connexion.jsp").
+ * 
+ * @see HttpServlet
+ */
 public class ConnexionServlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
 	public static final String VUE = "/WEB-INF/pages/connexion.jsp";
 	public static final String VUE2 = "/WEB-INF/pages/indexM.jsp";
 	public static final String ATT_USER = "utilisateur";
 	public static final String ATT_FORM = "form";
 	public static final String ATT_SESSION_USER =
 	"sessionUtilisateur";
-
+	/**
+	 * Pour gérer la méthode GET
+	 * 
+	 * @param HttpServletRequest
+	 * @param HttpServletResponse
+	 */
 	public void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		/* Affichage de la page de connexion */
 		this.getServletContext().getRequestDispatcher(VUE)
 				.forward(request, response);
 	}
-	
+	/**
+	 * Pour gérer la méthode POST
+	 * 
+	 * @param HttpServletRequest
+	 * @param HttpServletResponse
+	 */
 	public void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException 
 	{

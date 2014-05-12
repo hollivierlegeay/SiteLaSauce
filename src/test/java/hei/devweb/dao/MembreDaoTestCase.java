@@ -2,6 +2,7 @@ package hei.devweb.dao;
 
 import hei.devweb.model.Membre;
 
+
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
@@ -10,11 +11,30 @@ import java.util.List;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-
+/**
+ * <b>MembreDaoTestCase est la classe qui teste les méthodes de la classe MembreDao</b>
+ * <p>Rappel : 
+ * Un membre est caractérisé par les informations suivantes :
+ * <ul>
+ * <li>Un identifiant qui est généré automatiquement par la base de données.</li>
+ * <li>Un nom.</li>
+ * <li>Une prénom.</li>
+ * <li>Un mot de passe.</li>
+ * <li>Un email HEI.</li>
+ * <li>Un numéro de téléphone.</li>
+ * </ul>
+ * </p>
+ * 
+ * @see MembreDao
+ * 
+ */
 public class MembreDaoTestCase {
 
 	private MembreDao membreDao = new MembreDao();
-
+	/**
+	 * Méthode qui vide le contenu de la base de données
+	 * 
+	 */
 	@Before
 	public void purgeBDD() throws Exception {
 		Connection connection = DataSourceProvider.getDataSource()
@@ -26,7 +46,12 @@ public class MembreDaoTestCase {
 		stmt.close();
 		connection.close();
 	}
-
+	/**
+	 * Méthode qui teste la méthode "listerMembre" de la classe MembreDao.
+	 * 
+	 * @see MembreDao#listerMembres()
+	 * 
+	 */
 	@Test
 	public void testListerMembres() {
 		List<Membre> membres = membreDao.listerMembres();
@@ -38,7 +63,12 @@ public class MembreDaoTestCase {
 		Assert.assertEquals("juliette.grosleron@hei.fr",membres.get(0).getMailHEI());
 		Assert.assertEquals("0621635998",membres.get(0).getTelephone());
 	}
-
+	/**
+	 * Méthode qui teste la méthode "ajouterMembre" de la classe MembreDao.
+	 * 
+	 * @see MembreDao#ajouterMembre(Membre)
+	 * 
+	 */
 	@Test
 	public void testAjouterMembre() throws Exception {
 
@@ -57,7 +87,12 @@ public class MembreDaoTestCase {
 		Assert.assertEquals("marine.barbieux@hei.fr",results.getString("mailHEI"));
 		Assert.assertEquals("0621635998",results.getString("telephone"));
 	}
-
+	/**
+	 * Méthode qui teste la méthode "getMembre" de la classe MembreDao.
+	 * 
+	 * @see MembreDao#getMembre(Integer)
+	 * 
+	 */
 	@Test
 	public void testgetMembre() {
 		Membre membre = membreDao.getMembre(1);

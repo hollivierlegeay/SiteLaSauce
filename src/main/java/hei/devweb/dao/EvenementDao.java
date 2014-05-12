@@ -2,6 +2,7 @@ package hei.devweb.dao;
 
 import hei.devweb.model.Evenement;
 
+
 import java.sql.Connection;
 import java.sql.Date;
 import java.sql.PreparedStatement;
@@ -10,9 +11,18 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
-
+/**
+ * EvenementDao est la classe qui gère les intéractions du site avec la table "evenement" de la base de données sitelasauce.
+ *
+ */
 public class EvenementDao {
-
+	   /**
+  * Retourne la liste des évènements de la table "evenement".
+  * 
+  * @return La liste des évènements.
+  * 
+  * @see Evenement
+  */
 		public List<Evenement> listerEvenements() {
 			List<Evenement> listeEvenements = new ArrayList<Evenement>();
 			try {
@@ -42,7 +52,13 @@ public class EvenementDao {
 
 			return listeEvenements;
 		}
-
+		/**
+	     * Met à jour la table "evenement".
+	     * 
+	     * @param evenement 
+	     *            Le nouvel évènement ajouté.
+	     * 
+	     */
 		public void ajouterEvenement(Evenement Evenement) {
 			try {
 				Connection connection = DataSourceProvider.getDataSource()
@@ -66,7 +82,13 @@ public class EvenementDao {
 				e.printStackTrace();
 			}
 		}
-
+		/**
+	     * Met à jour la table "evenement".
+	     * 
+	     * @param idEvenement 
+	     *            L'id de l'évènement qui sera supprimé.
+	     * 
+	     */
 		public void supprimerEvenement(Integer idEvenement) {
 			try {
 				Connection connection = DataSourceProvider.getDataSource()
@@ -86,7 +108,13 @@ public class EvenementDao {
 				e.printStackTrace();
 			}
 		}
-
+		/**
+	     * Retourne l'objet Evenement.
+	     * @param idEvenement
+	     * 			Id de l'évènement qui sera retourné.
+	     * 
+	     * @return L'objet Evenement d'identifiant idEvenement. 
+	     */
 		public Evenement getEvenement(Integer idEvenement) {
 			Evenement Evenement = null;
 			try {
