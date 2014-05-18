@@ -13,12 +13,15 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * ListeRecettesServlet est la classe qui permet d'afficher dans l'espace "Membres" la liste des recettes via la page JSP suivante :"listeRecettes.jsp".
+ * ListeRecettesServlet est la classe qui permet d'afficher dans l'espace
+ * "Membres" la liste des recettes via la page JSP suivante
+ * :"listeRecettes.jsp".
  * 
  * @see HttpServlet
  */
 public class ListeRecettesServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+
 	/**
 	 * Pour gérer la méthode GET
 	 * 
@@ -28,8 +31,7 @@ public class ListeRecettesServlet extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
-		List<Recette> recettes = RecetteManager.getInstance()
-				.listerRecettes();
+		List<Recette> recettes = RecetteManager.getInstance().listerRecettes();
 		request.setAttribute("recettes", recettes);
 
 		RequestDispatcher view = request
@@ -37,4 +39,3 @@ public class ListeRecettesServlet extends HttpServlet {
 		view.forward(request, response);
 	}
 }
-

@@ -6,8 +6,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+
 /**
- *DeconnexionServlet est la classe qui permet la deconnexion à l'espace membre.
+ * DeconnexionServlet est la classe qui permet la deconnexion à l'espace membre.
  * 
  * @see HttpServlet
  */

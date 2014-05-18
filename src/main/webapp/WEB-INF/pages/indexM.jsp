@@ -15,19 +15,21 @@
 <!--Titre s'affichant dans l'onglet du navigateur-->
 <title>LaSauce - Espace Membres</title>
 <script type="text/javascript">
-		sfHover = function() {
-	        var sfEls = document.getElementById("menuM").getElementsByTagName("LI");
-	        for (var i=0; i<sfEls.length; i++) {
-	                sfEls[i].onmouseover=function() {
-	                        this.className+=" sfhover";
-	                }
-	                sfEls[i].onmouseout=function() {
-	                        this.className=this.className.replace(new RegExp(" sfhover\\b"), "");
-	                }
-	        }
+	sfHover = function() {
+		var sfEls = document.getElementById("menuM").getElementsByTagName("LI");
+		for (var i = 0; i < sfEls.length; i++) {
+			sfEls[i].onmouseover = function() {
+				this.className += " sfhover";
+			}
+			sfEls[i].onmouseout = function() {
+				this.className = this.className.replace(new RegExp(
+						" sfhover\\b"), "");
+			}
+		}
 	}
-	if (window.attachEvent) window.attachEvent("onload", sfHover);
-		</script>
+	if (window.attachEvent)
+		window.attachEvent("onload", sfHover);
+</script>
 
 </head>
 
@@ -46,12 +48,12 @@
 		<c:set var="pageSelectionnee" value="indexM" scope="request"></c:set>
 		<jsp:include page="menuM.jsp" />
 		<!-- 	</fieldset> -->
-		<br> <br> <br>
+		<br> <br> 
 		<h1 class="indexmembre">
-			Bienvenue à l'espace membre du site La Sauce<br> <br>
+			Bienvenue ${sessionScope.sessionUtilisateur.nom} à l'espace membre du site La Sauce<br> <br>
 		</h1>
 
-		<br> <br> <br>
+		<br> <br>
 		<p class=presentationindex>
 			Ici, vous aurez la possiblité de consulter les recettes, d'en ajouter
 			ou encore d'en supprimer. <br> Il en va de même pour les
@@ -59,7 +61,7 @@
 			lors des changements d'équipes. <br> Cet espace a été crée afin
 			de vous faciliter la gestion de ce site et de l'assiociation.
 		</p>
-		<br> <br> <br>
+		<br> 
 
 		<p style="text-align: center;">
 			<a class="retour"

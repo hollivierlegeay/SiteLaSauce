@@ -1,19 +1,23 @@
 package hei.devweb.servlets;
 
+import hei.devweb.metier.MembreManager;
 import hei.devweb.metier.RecetteManager;
+import hei.devweb.model.Membre;
 import hei.devweb.model.Recette;
 
 import java.io.IOException;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
-
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
 /**
- * AjoutRecetteServlet est la classe qui permet d'afficher le formulaire de création d'une recette ("ajouterRecette.jsp").
+ * AjoutRecetteServlet est la classe qui permet d'afficher le formulaire de
+ * création d'une recette ("ajouterRecette.jsp").
  * 
  * @see HttpServlet
  */
@@ -28,6 +32,7 @@ public class AjoutRecetteServlet extends HttpServlet {
 	public static final String CHAMP6 = "texteRecette";
 	public static final String ATT_ERREURS = "erreurs";
 	public static final String ATT_RESULTAT = "resultat";
+
 	/**
 	 * Pour gérer la méthode GET
 	 * 
@@ -42,6 +47,7 @@ public class AjoutRecetteServlet extends HttpServlet {
 		this.getServletContext().getRequestDispatcher(VUE)
 				.forward(request, response);
 	}
+
 	/**
 	 * Pour gérer la méthode POST
 	 * 
@@ -134,18 +140,29 @@ public class AjoutRecetteServlet extends HttpServlet {
 		}
 
 	}
+
 	/**
 	 * Méthode qui valide la saisie du titre dans le formulaire d'ajout.
 	 * 
 	 * @param titrePlatRecette
 	 */
 	private void validationTitre(String titrePlatRecette) throws Exception {
+		List<Recette> recettes = RecetteManager.getInstance().listerRecettes();
+		for (int i = 0; i < recettes.size(); i++) {
+			if (titrePlatRecette.equals(recettes.get(i).getTitrePlat()))	
+			{
+				throw new Exception(
+					"Ce titre de recette existe déjà.");
+			}
+		}
+
 		if (titrePlatRecette != null && titrePlatRecette.trim().length() < 3) {
 			throw new Exception(
 					"Le titre de la recette doit contenir au moins 3 caractères.");
 		}
 
 	}
+
 	/**
 	 * Méthode qui valide la saisie de la difficulté dans le formulaire d'ajout.
 	 * 
@@ -158,6 +175,7 @@ public class AjoutRecetteServlet extends HttpServlet {
 					"La difficulté doit contenir au moins 3 caractères.");
 		}
 	}
+
 	/**
 	 * Méthode qui valide la saisie du type de plat dans le formulaire d'ajout.
 	 * 
@@ -169,8 +187,10 @@ public class AjoutRecetteServlet extends HttpServlet {
 					"Le type de la recette doit contenir au moins 3 caractères.");
 		}
 	}
+
 	/**
-	 * Méthode qui valide la saisie de l'URL de l'image dans le formulaire d'ajout.
+	 * Méthode qui valide la saisie de l'URL de l'image dans le formulaire
+	 * d'ajout.
 	 * 
 	 * @param imgRecette
 	 */
@@ -180,6 +200,7 @@ public class AjoutRecetteServlet extends HttpServlet {
 					"L'URL de l'image doit contenir au moins 3 caractères.");
 		}
 	}
+
 	/**
 	 * Méthode qui valide la saisie des ingrédients dans le formulaire d'ajout.
 	 * 
@@ -193,6 +214,7 @@ public class AjoutRecetteServlet extends HttpServlet {
 					"La liste des ingrédients doit contenir au moins 3 caractères.");
 		}
 	}
+
 	/**
 	 * Méthode qui valide la saisie du texte dans le formulaire d'ajout.
 	 * 

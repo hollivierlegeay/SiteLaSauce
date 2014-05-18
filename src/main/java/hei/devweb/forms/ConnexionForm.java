@@ -6,64 +6,71 @@ import java.util.HashMap;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
+
 /**
- * <b>ConnexionForm est la classe représentant le formulaire de connexion pour traiter et valider les données et connecter l'utilisateur</b>
- * <p>Un utilisateur est caractérisé par les informations suivantes :
+ * <b>ConnexionForm est la classe représentant le formulaire de connexion pour
+ * traiter et valider les données et connecter l'utilisateur</b>
+ * <p>
+ * Un utilisateur est caractérisé par les informations suivantes :
  * <ul>
  * <li>Un email HEI qui est propre à chaque membre.</li>
- * <li>Un mot de passe choisi lors de la création du membre enregistré dans la base de données.</li>
+ * <li>Un mot de passe choisi lors de la création du membre enregistré dans la
+ * base de données.</li>
  * <li>Un nom.</li>
  * </ul>
  * </p>
  * <p>
- *L'Utilisateur n'intervient que pour la page de connexion à l'espace Membres.
+ * L'Utilisateur n'intervient que pour la page de connexion à l'espace Membres.
  * </p>
  * 
  * 
  * 
  */
 public final class ConnexionForm {
-	 /**
-     * Le champs email. 
-     */
+	/**
+	 * Le champs email.
+	 */
 	private static final String CHAMP_EMAIL = "email";
-	 /**
-     * Le champs mot de passe.
-     */
+	/**
+	 * Le champs mot de passe.
+	 */
 	private static final String CHAMP_PASS = "motdepasse";
-	 /**
-     * Le résultat du formulaire : Succès ou echec de la connexion.
-     */
+	/**
+	 * Le résultat du formulaire : Succès ou echec de la connexion.
+	 */
 	private String resultat;
-	 /**
-     * Les erreurs sur le formulaire.
-     */
+	/**
+	 * Les erreurs sur le formulaire.
+	 */
 	private Map<String, String> erreurs = new HashMap<String, String>();
 
 	/**
-     * Retourne le résultat de la connexion.
-     * 
-     * @return Le résultat de la connexion. 
-     */
+	 * Retourne le résultat de la connexion.
+	 * 
+	 * @return Le résultat de la connexion.
+	 */
 	public String getResultat() {
 		return resultat;
 	}
+
 	/**
-     * Retourne les erreurs relevées sur le formulaire.
-     * 
-     * @return Les erreurs. 
-     */
+	 * Retourne les erreurs relevées sur le formulaire.
+	 * 
+	 * @return Les erreurs.
+	 */
 	public Map<String, String> getErreurs() {
 		return erreurs;
 	}
+
 	/**
-     * Méthode qui traite et valide les données saisient dans le formulaire.
-     * @param HttpServletRequest 
-     * 			Contenu du formulaire
-     * @return L'objet Utilisateur.
-     * 
-     * @see Utilisateur
-     */
+	 * Méthode qui traite et valide les données saisient dans le formulaire.
+	 * 
+	 * @param HttpServletRequest
+	 *            Contenu du formulaire
+	 * @return L'objet Utilisateur.
+	 * 
+	 * @see Utilisateur
+	 */
 	public Utilisateur connecterUtilisateur(HttpServletRequest request) {
 		/* Récupération des champs du formulaire */
 		String email = getValeurChamp(request, CHAMP_EMAIL);
@@ -95,8 +102,9 @@ public final class ConnexionForm {
 
 	/**
 	 * Méthode qui valide l'adresse email saisie.
+	 * 
 	 * @param email
-	 * 		Mail saisi par l'utilisateur sur la page de connexion.
+	 *            Mail saisi par l'utilisateur sur la page de connexion.
 	 */
 	private void validationEmail(String email) throws Exception {
 		if (email != null
@@ -107,8 +115,9 @@ public final class ConnexionForm {
 
 	/**
 	 * Méthode qui valide le mot de passe saisi.
+	 * 
 	 * @param motDePasse
-	 * 		Mot de passe saisi par l'utilisateur sur la page de connexion.
+	 *            Mot de passe saisi par l'utilisateur sur la page de connexion.
 	 */
 	private void validationMotDePasse(String motDePasse) throws Exception {
 		if (motDePasse != null) {
@@ -122,7 +131,9 @@ public final class ConnexionForm {
 	}
 
 	/**
-	 * Méthode qui ajoute un message correspondant au champ spécifié à la map des erreurs.
+	 * Méthode qui ajoute un message correspondant au champ spécifié à la map
+	 * des erreurs.
+	 * 
 	 * @param champ
 	 * @param message
 	 */

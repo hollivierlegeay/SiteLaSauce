@@ -13,19 +13,21 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * ListeEvenementsServlet est la classe qui permet d'afficher la liste des évènements via la page JSP suivante :"listeEvenements.jsp".
+ * ListeEvenementsServlet est la classe qui permet d'afficher la liste des
+ * évènements via la page JSP suivante :"listeEvenements.jsp".
  * 
  * @see HttpServlet
  */
 
 public class ListeEvenementsServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+
 	/**
 	 * Pour gérer la méthode GET
 	 * 
 	 * @param HttpServletRequest
 	 * @param HttpServletResponse
-	 */ 
+	 */
 	@Override
 	protected void doGet(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
@@ -38,4 +40,3 @@ public class ListeEvenementsServlet extends HttpServlet {
 		view.forward(request, response);
 	}
 }
-

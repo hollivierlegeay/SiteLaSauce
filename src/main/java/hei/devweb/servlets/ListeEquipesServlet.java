@@ -11,13 +11,16 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
 /**
- * ListeEquipesServlet est la classe qui permet d'afficher dans l'espace "Membres" la liste des équipes via la page JSP suivante :"listeEquipes.jsp".
+ * ListeEquipesServlet est la classe qui permet d'afficher dans l'espace
+ * "Membres" la liste des équipes via la page JSP suivante :"listeEquipes.jsp".
  * 
  * @see HttpServlet
  */
 public class ListeEquipesServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+
 	/**
 	 * Pour gérer la méthode GET
 	 * 

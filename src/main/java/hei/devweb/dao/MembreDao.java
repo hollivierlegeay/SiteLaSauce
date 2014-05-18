@@ -8,18 +8,20 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
+
 /**
- * MembreDao est la classe qui gère les intéractions du site avec la table "membre" de la base de données sitelasauce.
- *
+ * MembreDao est la classe qui gère les intéractions du site avec la table
+ * "membre" de la base de données sitelasauce.
+ * 
  */
 public class MembreDao {
-	   /**
-* Retourne la liste des membres de la table "membre".
-* 
-* @return La liste des membres.
-* 
-* @see Membre
-*/
+	/**
+	 * Retourne la liste des membres de la table "membre".
+	 * 
+	 * @return La liste des membres.
+	 * 
+	 * @see Membre
+	 */
 	public List<Membre> listerMembres() {
 		List<Membre> listeMembres = new ArrayList<Membre>();
 		try {
@@ -31,8 +33,7 @@ public class MembreDao {
 
 			while (results.next()) {
 				Membre Membre = new Membre(results.getInt("idMembre"),
-						results.getString("nom"),
-						results.getString("prenom"),
+						results.getString("nom"), results.getString("prenom"),
 						results.getString("motdePasse"),
 						results.getString("mailHEI"),
 						results.getString("telephone"));
@@ -50,13 +51,14 @@ public class MembreDao {
 
 		return listeMembres;
 	}
+
 	/**
-     * Met à jour la table "membre".
-     * 
-     * @param membre 
-     *            Le nouveau membre ajouté.
-     * 
-     */
+	 * Met à jour la table "membre".
+	 * 
+	 * @param membre
+	 *            Le nouveau membre ajouté.
+	 * 
+	 */
 	public void ajouterMembre(Membre Membre) {
 		try {
 			Connection connection = DataSourceProvider.getDataSource()
@@ -80,13 +82,14 @@ public class MembreDao {
 			e.printStackTrace();
 		}
 	}
+
 	/**
-     * Met à jour la table "membre".
-     * 
-     * @param idMembre 
-     *            L'id du membre qui sera supprimé.
-     * 
-     */
+	 * Met à jour la table "membre".
+	 * 
+	 * @param idMembre
+	 *            L'id du membre qui sera supprimé.
+	 * 
+	 */
 	public void supprimerMembre(Integer idMembre) {
 		try {
 			Connection connection = DataSourceProvider.getDataSource()
@@ -106,13 +109,15 @@ public class MembreDao {
 			e.printStackTrace();
 		}
 	}
+
 	/**
-     * Retourne l'objet Membre.
-     * @param idMembre
-     * 			Id du membre qui sera retourné.
-     * 
-     * @return L'objet Membre d'identifiant idMembre. 
-     */	
+	 * Retourne l'objet Membre.
+	 * 
+	 * @param idMembre
+	 *            Id du membre qui sera retourné.
+	 * 
+	 * @return L'objet Membre d'identifiant idMembre.
+	 */
 	public Membre getMembre(Integer idMembre) {
 		Membre Membre = null;
 		try {
@@ -126,8 +131,7 @@ public class MembreDao {
 			ResultSet result = stmt.executeQuery();
 			if (result.next()) {
 				Membre = new Membre(result.getInt("idMembre"),
-						result.getString("nom"),
-						result.getString("prenom"),
+						result.getString("nom"), result.getString("prenom"),
 						result.getString("motdePasse"),
 						result.getString("mailHEI"),
 						result.getString("telephone"));

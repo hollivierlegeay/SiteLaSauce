@@ -10,6 +10,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
 /**
  * EquipeServlet est la classe qui permet d'afficher la page ("equipe.jsp").
  * 
@@ -17,6 +18,7 @@ import javax.servlet.http.HttpServletResponse;
  */
 public class EquipeServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+
 	/**
 	 * Pour gérer la méthode GET
 	 * 
@@ -34,6 +36,7 @@ public class EquipeServlet extends HttpServlet {
 				.getRequestDispatcher("WEB-INF/pages/equipe.jsp");
 		view.forward(request, response);
 	}
+
 	/**
 	 * Pour gérer la méthode POST
 	 * 

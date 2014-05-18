@@ -58,7 +58,8 @@
 						name="telephoneMembre" id="telephoneMembre" value="<c:out value="${param.telephoneMembre}"/>" size="40"
 						maxlength="20" />
 						 <br /><span class="erreur">${erreurs['telephoneMembre']}</span> <br />
-				
+						
+						<p class="${empty erreurs ? 'succes' : 'erreur'}">${resultat}</p>
 				</fieldset>
 				
 				<!-- Bouton Valider-->

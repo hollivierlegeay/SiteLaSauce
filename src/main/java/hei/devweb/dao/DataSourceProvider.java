@@ -3,17 +3,22 @@ package hei.devweb.dao;
 import javax.sql.DataSource;
 
 import com.mysql.jdbc.jdbc2.optional.MysqlDataSource;
+
 /**
- * <p>DataSourceProvider est la classe qui renseigne les informations de connexion à la base de données sitelasauce.</p>
+ * <p>
+ * DataSourceProvider est la classe qui renseigne les informations de connexion
+ * à la base de données sitelasauce.
+ * </p>
  */
 public class DataSourceProvider {
 
 	private static MysqlDataSource dataSource;
+
 	/**
-     * Retourne l'objet datasource.
-     * 
-     * @return Le lien avec la base de données sitelasauce. 
-     */
+	 * Retourne l'objet datasource.
+	 * 
+	 * @return Le lien avec la base de données sitelasauce.
+	 */
 	public static DataSource getDataSource() {
 		if (dataSource == null) {
 			dataSource = new MysqlDataSource();
@@ -26,4 +31,3 @@ public class DataSourceProvider {
 		return dataSource;
 	}
 }
-

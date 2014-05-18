@@ -13,8 +13,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+
 /**
- * ConnexionServlet est la classe qui permet d'afficher la page de connexion à l'espace "Membres" ("connexion.jsp").
+ * ConnexionServlet est la classe qui permet d'afficher la page de connexion à
+ * l'espace "Membres" ("connexion.jsp").
  * 
  * @see HttpServlet
  */
@@ -24,8 +26,8 @@ public class ConnexionServlet extends HttpServlet {
 	public static final String VUE2 = "/WEB-INF/pages/indexM.jsp";
 	public static final String ATT_USER = "utilisateur";
 	public static final String ATT_FORM = "form";
-	public static final String ATT_SESSION_USER =
-	"sessionUtilisateur";
+	public static final String ATT_SESSION_USER = "sessionUtilisateur";
+
 	/**
 	 * Pour gérer la méthode GET
 	 * 
@@ -38,6 +40,7 @@ public class ConnexionServlet extends HttpServlet {
 		this.getServletContext().getRequestDispatcher(VUE)
 				.forward(request, response);
 	}
+
 	/**
 	 * Pour gérer la méthode POST
 	 * 
@@ -45,59 +48,57 @@ public class ConnexionServlet extends HttpServlet {
 	 * @param HttpServletResponse
 	 */
 	public void doPost(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException 
-	{
-		
+			throws ServletException, IOException {
+
 		/* Préparation de l'objet formulaire */
 		ConnexionForm form = new ConnexionForm();
-		
+
 		/* Traitement de la requête et récupération du bean en résultant */
-		Utilisateur utilisateur = form.connecterUtilisateur( request);
-		
+		Utilisateur utilisateur = form.connecterUtilisateur(request);
+
 		/* Initialisation des variables locales */
 		String login = request.getParameter("email");
 		String mdp = request.getParameter("motdepasse");
-		
+
 		/* Récupération de la session depuis la requête */
 		HttpSession session = request.getSession();
 
 		/**
-		* Si aucune erreur de validation n'a eu lieu, alors ajout du bean
-		* Utilisateur à la session, sinon suppression du bean de la
-		session.
-		*/
-	
+		 * Si aucune erreur de validation n'a eu lieu, alors ajout du bean
+		 * Utilisateur à la session, sinon suppression du bean de la session.
+		 */
+
 		List<Membre> membres = MembreManager.getInstance().listerMembres();
-		for (int i = 0; i < membres.size(); i++) 
-		{
-			if(login.equals(membres.get(i).getMailHEI())
+		for (int i = 0; i < membres.size(); i++) {
+			if (login.equals(membres.get(i).getMailHEI())
 					&& mdp.equals(membres.get(i).getMotdePasse())
-					&& login.endsWith("@hei.fr")
-					&&form.getErreurs().isEmpty())
-			{			
-					session.setAttribute(ATT_SESSION_USER, utilisateur );
-					//Connexion avec succès à l'espace membre
+					&& login.endsWith("@hei.fr") && form.getErreurs().isEmpty()) {
+				
+				session.setAttribute(ATT_SESSION_USER, utilisateur);
+				// Connexion avec succès à l'espace membre
 
-			} 
-			else {
-				session.setAttribute(ATT_SESSION_USER, null );
-				//Echec de la connexion à l'espace membre
-				}
+				/*
+				 * Stockage du formulaire et du bean dans l'objet request
+				 */
+				request.setAttribute(ATT_FORM, form);
+				request.setAttribute(ATT_USER, utilisateur);
+
+			} else {
+				session.setAttribute(ATT_SESSION_USER, null);
+				// Echec de la connexion à l'espace membre
+
+			}
+
 		}
-		
-			/* Stockage du formulaire et du bean dans l'objet request
-		*/
-		request.setAttribute( ATT_FORM, form );
-		request.setAttribute( ATT_USER, utilisateur );
-		
-		/* Redirection vers l'index de l'espace Membre*/
-		this.getServletContext().getRequestDispatcher( VUE
-		).forward( request, response );
-		
-		/* Vérification des champs email et mot de passe avec la base de données */
-		
 
-						
+		/*
+		 * Stockage du formulaire et du bean dans l'objet request
+		 */
+		request.setAttribute(ATT_FORM, form);
+		request.setAttribute(ATT_USER, utilisateur);
+
+		this.getServletContext().getRequestDispatcher(VUE)
+				.forward(request, response);
+
 	}
 }
-			

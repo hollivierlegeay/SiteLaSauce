@@ -8,13 +8,16 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
 /**
- * SuppressionMembreServlet est la classe qui permet de réaliser la suppression d'un membre.
+ * SuppressionMembreServlet est la classe qui permet de réaliser la suppression
+ * d'un membre.
  * 
  * @see HttpServlet
  */
 public class SuppressionMembreServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+
 	/**
 	 * Pour gérer la méthode GET
 	 * 

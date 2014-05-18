@@ -10,19 +10,22 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
 /**
- * EvenementServlet est la classe qui permet d'afficher la page ("evenement.jsp").
+ * EvenementServlet est la classe qui permet d'afficher la page
+ * ("evenement.jsp").
  * 
  * @see HttpServlet
  */
 public class EvenementServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+
 	/**
 	 * Pour gérer la méthode GET
 	 * 
 	 * @param HttpServletRequest
 	 * @param HttpServletResponse
-	 */   
+	 */
 	@Override
 	protected void doGet(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
@@ -36,6 +39,7 @@ public class EvenementServlet extends HttpServlet {
 				.getRequestDispatcher("WEB-INF/pages/evenement.jsp");
 		view.forward(request, response);
 	}
+
 	/**
 	 * Pour gérer la méthode POST
 	 * 

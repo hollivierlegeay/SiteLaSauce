@@ -12,13 +12,14 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
-
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
 /**
- * AjoutEvenementServlet est la classe qui permet d'afficher le formulaire de création d'un évènement ("ajouterEvenement.jsp").
+ * AjoutEvenementServlet est la classe qui permet d'afficher le formulaire de
+ * création d'un évènement ("ajouterEvenement.jsp").
  * 
  * @see HttpServlet
  */
@@ -31,6 +32,7 @@ public class AjoutEvenementServlet extends HttpServlet {
 	public static final String CHAMP3 = "lieuEvenement";
 	public static final String ATT_ERREURS = "erreurs";
 	public static final String ATT_RESULTAT = "resultat";
+
 	/**
 	 * Pour gérer la méthode GET
 	 * 
@@ -45,6 +47,7 @@ public class AjoutEvenementServlet extends HttpServlet {
 		this.getServletContext().getRequestDispatcher(VUE)
 				.forward(request, response);
 	}
+
 	/**
 	 * Pour gérer la méthode POST
 	 * 
@@ -120,6 +123,7 @@ public class AjoutEvenementServlet extends HttpServlet {
 		}
 
 	}
+
 	/**
 	 * Méthode qui valide la saisie du titre dans le formulaire d'ajout.
 	 * 
@@ -132,6 +136,7 @@ public class AjoutEvenementServlet extends HttpServlet {
 		}
 
 	}
+
 	/**
 	 * Méthode qui valide la saisie du détail dans le formulaire d'ajout.
 	 * 
@@ -143,6 +148,7 @@ public class AjoutEvenementServlet extends HttpServlet {
 					"La description doit contenir au moins 3 caractères.");
 		}
 	}
+
 	/**
 	 * Méthode qui valide la saisie du lieu dans le formulaire d'ajout.
 	 * 
