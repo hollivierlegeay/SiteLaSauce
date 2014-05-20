@@ -16,8 +16,8 @@ body{
 	position:relative;
 	top:10px;
 	margin:auto;
-	width:800px;
-	height:800px;
+	width: 800px;
+	height:auto
 	background:#FFFFFF;
 	z-index:3;
 }
@@ -27,8 +27,8 @@ body{
 	display:block;
 	top:17px;
 	margin:auto;
-	width: 780px ;
-	height: 200px;
+ 	width: 780px;
+	height: 200px; 
 	z-index:4;
 	}
 

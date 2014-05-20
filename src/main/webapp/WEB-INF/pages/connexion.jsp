@@ -24,17 +24,17 @@
 		<!-- Menu de navigation -->
 		<c:set var="pageSelectionnee" value="connexion" scope="request"></c:set>
 		<jsp:include page="menu.jsp" />
-		
+
 		<!-- Titre de la page -->
 		<h1 class="contact">Espace réservé aux membres de l'association</h1>
-		
-			<!-- Formulaire de connexion -->
+
+		<!-- Formulaire de connexion -->
 		<form method="post" action="connexion">
 			<fieldset>
 				<legend>Connexion à l'espace Membre</legend>
 				<p>Vous pouvez vous connecter via ce formulaire. [Réservé aux
 					membres de l'équipe LaSauce]</p>
-				
+
 				<!-- Saisie du mail -->
 				<label for="email">Adresse email HEI <span class="requis">*</span></label>
 
@@ -42,13 +42,12 @@
 					value="<c:out value="${utilisateur.email}"/>" size="20"
 					maxlength="60" /> <span class="erreur">${form.erreurs['email']}</span>
 				<br />
-				
+
 				<!-- Saisie du mot de passe -->
-				<label for="motdepasse">Mot de passe <span
-					class="requis">*</span></label> <input type="password" id="motdepasse"
-					name="motdepasse" value="" size="20" maxlength="20" /> <span
-					class="erreur">${form.erreurs['motdepasse']}</span> <br /> <input
-					type="submit" value="Connexion" class="sansLabel" />
+				<label for="motdepasse">Mot de passe <span class="requis">*</span></label>
+				<input type="password" id="motdepasse" name="motdepasse" value=""
+					size="20" maxlength="20" /> <span class="erreur">${form.erreurs['motdepasse']}</span>
+				<br /> <input type="submit" value="Connexion" class="sansLabel" />
 
 				<p class="${empty form.erreurs ? 'succes' : 'erreur'}">${form.resultat}</p>
 
@@ -58,10 +57,10 @@
 					<%--Si l'utilisateur existe en session, alors on affiche son adresse email.--%>
 
 					<p class="succes">
-						Vous êtes connecté(e) avec
-						l'adresse : ${sessionScope.sessionUtilisateur.email} <br /> <br />
-
-						<a href="indexM"><input class="acces" type="button"
+						Succès de la connexion. <br>
+						Vous êtes connecté(e) avec l'adresse :
+						${sessionScope.sessionUtilisateur.email} <br /> <br /> <a
+							href="indexM"><input class="acces" type="button"
 							id="button-membre" value="Accéder à l'espace Membres" /></a>
 					</p>
 				</c:if>

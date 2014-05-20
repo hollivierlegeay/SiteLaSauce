@@ -92,7 +92,7 @@ public final class ConnexionForm {
 		utilisateur.setMotDePasse(motDePasse);
 		/* Initialisation du résultat global de la validation. */
 		if (erreurs.isEmpty()) {
-			resultat = "Succès de la connexion.";
+			resultat = "";
 
 		} else {
 			resultat = "Échec de la connexion.";
